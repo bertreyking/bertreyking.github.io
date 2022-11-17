@@ -6,7 +6,7 @@ copyright: '版权归个人所有'
 
 nav:
     - Home: 
-        - 首页: docs/index.md
+        - 首页: index.md
     - Second:
         - 第二页面: second/second.md
     - Three:
