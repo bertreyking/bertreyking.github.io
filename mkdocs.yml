@@ -7,14 +7,14 @@ copyright: '版权归个人所有'
 nav:
     - Home: index.md
     - Linux:
-        - Linux 查找清理大文件：linux_find_du_mv_delete.md
+        - 'Linux 查找清理大文件'：linux_find_du_mv_delete.md
 
 markdown_extensions:
-  - toc:
-      permalink: True
-  - footnotes
-  - tables
-  - markdown_checklist.extension
+    - toc:
+        permalink: True
+    - footnotes
+    - tables
+    - markdown_checklist.extension
 
 theme:
-  name: material
+    name: material
