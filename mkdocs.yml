@@ -6,4 +6,5 @@ nav:
     - Second: docs/second.md
     - Three: docs/three.md
 
-theme: readthedocs
+theme:
+  name: material
