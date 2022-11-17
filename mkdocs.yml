@@ -6,5 +6,12 @@ nav:
     - Second: docs/second.md
     - Three: docs/three.md
 
+markdown_extensions:
+  - toc:
+      permalink: True
+  - footnotes
+  - tables
+  - markdown_checklist.extension
+
 theme:
   name: material
