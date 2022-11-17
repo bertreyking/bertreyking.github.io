@@ -23,7 +23,7 @@
 
 ## 使用 [GitHub Pages](https://docs.github.com/en/pages/quickstart) 快速发布
 
-参阅 [MKDOCS 官方安装文档](https://squidfunk.github.io/mkdocs-material/getting-started/)
+参阅 [Mkdocs 官方安装文档](https://squidfunk.github.io/mkdocs-material/getting-started/)
 
 1. pip install --upgrade pip && pip install mkdocs
 2. pip install mkdocs-material
