@@ -1,0 +1,9 @@
+site_name: MyWebSite
+site_url: https://github.com/bertreyking/bertreyking.github.io/
+
+nav:
+    - Home: docs/index.md
+    - Second: docs/second.md
+    - Three: docs/three.md
+
+theme: readthedocs
