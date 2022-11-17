@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#linux" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -231,10 +236,64 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Linux 查找清理大文件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Linux 查找清理大文件
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    查找大文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查找大目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    查找并mv文件到指定目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#60" class="md-nav__link">
+    指定目录深度，查找并删除60天前的文件
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -264,6 +323,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    查找大文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    查找大目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    查找并mv文件到指定目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#60" class="md-nav__link">
+    指定目录深度，查找并删除60天前的文件
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -278,34 +375,22 @@
                   
 
 
-  <h1>Linux 查找清理大文件</h1>
-
-<ol>
-<li>查找大文件</li>
-</ol>
-<pre><code>find / -type f -size +500M -print0 | xargs -0 ls -lrth
+<h1 id="linux">Linux 文件查找与清理<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<h2 id="_1">查找大文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>find / -type f -size +500M -print0 | xargs -0 ls -lrth
 find / -type f -size +500M -print | xargs ls -lrth
-find / -type f -size +500M -print | xargs /bin/rm -rf 
-</code></pre>
-<ol>
-<li>查找大目录</li>
-</ol>
-<pre><code>df -h --max-depth=2
-</code></pre>
-<ol>
-<li>查找并mv文件到指定目录</li>
-</ol>
-<pre><code>find /logs/xxxx/ -mtime +30 -name &quot;*.log&quot; -exec mv {} /logs/tmp_backup/xxxx \; 
-
-访问时间戳（atime）：表示最后一次访问文件的时间。
+find / -type f -size +500M -print | xargs /bin/rm -rf</code></p>
+<h2 id="_2">查找大目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>df -h --max-depth=2</code></p>
+<h2 id="mv">查找并mv文件到指定目录<a class="headerlink" href="#mv" title="Permanent link">&para;</a></h2>
+<p>`
+find /logs/xxxx/ -mtime +30 -name "*.log" -exec mv {} /logs/tmp_backup/xxxx \; </p>
+<p>访问时间戳（atime）：表示最后一次访问文件的时间。
 修改时间戳 (mtime)：这是文件内容最后一次修改的时间。
 更改时间戳（ctime）：指上次更改与文件相关的某些元数据的时间。
-</code></pre>
-<ol>
-<li>指定目录深度，查找并删除60天前的文件</li>
-</ol>
-<pre><code>find /logs/xxxx/appname -maxdepth 10 -name *.tar -mtime +60 -type f -delete
-</code></pre>
+`</p>
+<h2 id="60">指定目录深度，查找并删除60天前的文件<a class="headerlink" href="#60" title="Permanent link">&para;</a></h2>
+<p><code>find /logs/xxxx/appname -maxdepth 10 -name *.tar -mtime +60 -type f -delete</code></p>
 
 
 
