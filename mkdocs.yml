@@ -6,11 +6,11 @@ copyright: '版权归个人所有'
 
 nav:
     - Home: 
-        - 首页: index.md
+        - 首页: docs/index.md
     - Second:
-        - 第二页面: second/second.md
+        - 第二页面: docs/second.md
     - Three:
-        - 第三页面: three/three.md
+        - 第三页面: docs/three.md
 
 markdown_extensions:
   - toc:
