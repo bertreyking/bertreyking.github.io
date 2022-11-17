@@ -7,7 +7,15 @@ copyright: '版权归个人所有'
 nav:
     - Home: index.md
     - Linux:
-        - 'Linux 查找清理大文件': 'linux_find_du_mv_delete.md'
+        - 'CPU 负载分析': 'cpu_Load_Average分析.md'
+        - 'CPU 上下文切换': 'cpu_上下文切换.md'
+        - 'IPtables 使用': 'iptables.md'
+        - 'TCPdump 抓包': 'iptables.md'
+        - 'DNS 解析': 'dns解析顺序.md'
+        - 'JSON 数据处理': 'json_jq.md'
+        - 'UPdate & UPgrade 区别': 'update与upgrade区别.md'
+        - '快速查找清理文件': 'linux_find_du_mv_delete.md'
+        - 'Ansible Playbook': 'ansible.md'
 
 markdown_extensions:
     - toc:
