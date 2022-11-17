@@ -8,7 +8,7 @@ nav:
     - Home: 
         - 首页: index.md
     - Second:
-        - 第二页面: second/second.md
+        - 第二页面: second.md
     - Three:
         - 第三页面: three.md
 
