@@ -8,7 +8,7 @@ nav:
     - Home: index.md
     - Linux:
         - 'Linux 查找清理大文件': 'linux_find_du_mv_delete.md'
-    - 'Daocloud5组件':
+    - 'Dce5 组件':
 	- SpiderPool: SpiderPool.md
 
 markdown_extensions:
