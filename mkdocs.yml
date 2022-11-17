@@ -16,8 +16,5 @@ markdown_extensions:
     - tables
     - markdown_checklist.extension
 
-plugins:
-    - with-pdf
-
 theme:
     name: material
