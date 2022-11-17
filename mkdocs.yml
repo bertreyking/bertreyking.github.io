@@ -5,12 +5,13 @@ site_description: '个人事件记录'
 copyright: '版权归个人所有'
 
 nav:
-    - Home: 
-        - 首页: index.md
-    - Second:
-        - 第二页面: second.md
-    - Three:
-        - 第三页面: three.md
+    - Home: index.md
+    - Linux:
+    - Pyhon:
+    - Kubernetes:
+    - Monitor:
+        - Prometheus:
+        - VictoriaMetrics:
 
 markdown_extensions:
   - toc:
