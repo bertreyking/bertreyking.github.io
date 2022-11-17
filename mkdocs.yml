@@ -15,6 +15,10 @@ markdown_extensions:
     - footnotes
     - tables
     - markdown_checklist.extension
+    
+plugins:
+    - search
+    - pdf-export
 
 theme:
     name: material
