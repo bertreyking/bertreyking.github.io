@@ -12,14 +12,14 @@
         <meta name="author" content="weibing.ma">
       
       
-        <link rel="canonical" href="https://bertreyking.github.io/linux_find_du_mv_delete/">
+        <link rel="canonical" href="https://bertreyking.github.io/SpiderPool/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Linux 查找清理大文件 - 贝特雷金</title>
+        <title>SpiderPool - 贝特雷金</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linux" class="md-skip">
+        <a href="#spiderpool" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux 查找清理大文件
+              SpiderPool
             
           </span>
         </div>
@@ -200,14 +200,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -228,73 +226,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Linux 查找清理大文件
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../linux_find_du_mv_delete/" class="md-nav__link">
         Linux 查找清理大文件
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    查找大文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    查找大目录
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mv" class="md-nav__link">
-    查找并mv到指定目录
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#60" class="md-nav__link">
-    指定目录深度，查找删除60天前文件
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -312,12 +248,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -338,11 +276,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../SpiderPool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SpiderPool
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         SpiderPool
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spiderpool_1" class="md-nav__link">
+    什么是 SpiderPool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-helm" class="md-nav__link">
+    组件部署(ui 安装、helm 安装)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configmap-secret" class="md-nav__link">
+    配置文件(configmap 、secret )
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crd-ippool" class="md-nav__link">
+    以 CRD 形式定义 ipPool
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -381,29 +381,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    查找大文件
+  <a href="#spiderpool_1" class="md-nav__link">
+    什么是 SpiderPool
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    查找大目录
+  <a href="#ui-helm" class="md-nav__link">
+    组件部署(ui 安装、helm 安装)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mv" class="md-nav__link">
-    查找并mv到指定目录
+  <a href="#configmap-secret" class="md-nav__link">
+    配置文件(configmap 、secret )
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#60" class="md-nav__link">
-    指定目录深度，查找删除60天前文件
+  <a href="#crd-ippool" class="md-nav__link">
+    以 CRD 形式定义 ipPool
   </a>
   
 </li>
@@ -423,24 +423,190 @@
                   
 
 
-<h1 id="linux">Linux 文件查找与清理<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
-<h2 id="_1">查找大文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<pre><code>find / -type f -size +500M -print0 | xargs -0 ls -lrth
-find / -type f -size +500M -print | xargs ls -lrth
-find / -type f -size +500M -print | xargs /bin/rm -rf 
-</code></pre>
-<h2 id="_2">查找大目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<pre><code>df -h --max-depth=2
-</code></pre>
-<h2 id="mv">查找并mv到指定目录<a class="headerlink" href="#mv" title="Permanent link">&para;</a></h2>
-<pre><code>find /logs/xxxx/ -mtime +30 -name &quot;*.log&quot; -exec mv {} /logs/tmp_backup/xxxx \; 
+<h1 id="spiderpool">SpiderPool 学习笔记<a class="headerlink" href="#spiderpool" title="Permanent link">&para;</a></h1>
+<h2 id="spiderpool_1">什么是 SpiderPool<a class="headerlink" href="#spiderpool_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-shell">Spiderpool 是一个 IP 地址管理 (IPAM) 插件，可为容器云平台分配 IP 地址。 大部分的 Overlay CNI 都具备符合功能特性的 IPAM 组件，SpiderPool 的主要设计目标是搭配 Underlay CNI （例如 MacVLAN CNI、 VLAN CNI、 IPVLAN CNI等）进行 IP 的精细化管理。
 
-- 访问时间戳（atime）：表示最后一次访问文件的时间。
-- 修改时间戳 (mtime)：这是文件内容最后一次修改的时间。
-- 更改时间戳（ctime）：指上次更改与文件相关的某些元数据的时间。
+Spiderpool 适用于任何能够对接第三方 IPAM 的 CNI 插件，尤其适合于一些缺失 IPAM 的 CNI， 包括 SRI-OV、 MacVLAN、 IPVLAN、 OVS-CNI 等。 而一些 overlay CNI 自带了 IPAM 组件，对 Spiderpool 需求相对较低。
+
+Spiderpool 具备以下特点：
+- CRD 设计，全面的状态和事件展示
+- 应用绑定 ippool 具备多种渠道，包括 annotation 静态指定、annotation 智能分配、租户默认池、集群默认池、CNI 配置文件等
+- ippool 的节点亲和性设置，帮助同一应用解决跨子网分配 IP 地址等特殊需求
+- “应用固定 IP 地址范围” 场景的智能管理，包括智能创建 ippool、弹性扩缩容 IP 数量、智能回收 ippool 等
+- 防止 IP 地址泄露的回收机制，避免 IP 浪费
+- ipv4-only、ipv6-only 和 dual-stack 集群的支持
+- statefulset 支持
+- 配合 multus，在对多网卡场景下，支持不同网卡的进行独立指定 ippool
+- 预留集群外部的 IP 地址，使得 IPAM 永不分配给 Pod 使用
+- 路由定制
+- 丰富的 metrics 度量指
 </code></pre>
-<h2 id="60">指定目录深度，查找删除60天前文件<a class="headerlink" href="#60" title="Permanent link">&para;</a></h2>
-<pre><code>find /logs/xxxx/appname -maxdepth 10 -name *.tar -mtime +60 -type f -delete
+<h2 id="ui-helm">组件部署(<a href="https://docs.daocloud.io/network/modules/spiderpool/install/">ui 安装</a>、<a href="https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/install.md">helm 安装</a>)<a class="headerlink" href="#ui-helm" title="Permanent link">&para;</a></h2>
+<pre><code class="language-shell">- helm 启动 job 控制器来完成
+[root@master01 ~]# kubectl get pod -n kube-system | grep -i spider 
+helm-operation-install-spiderpoll-maweibing-wfr9m-kk42c      0/1     Completed   0             45h
+helm-operation-install-spiderpool-maweibing-bn6k9-m75ml      0/1     Completed   0             44h
+helm-operation-install-spiderpool-maweibing-qqlbk-sb6dr      0/1     Completed   0             44h
+helm-operation-uninstall-spiderpoll-maweibing-47gxt-fk2nx    0/1     Completed   0             44h
+helm-operation-uninstall-spiderpool-maweibing-8bw6m-gd7zs    0/1     Completed   0             44h
+
+- spiderpool-agent 的 pod 由 daemonsets 控制器来完成 
+spiderpool-agent-5r8kg                                       1/1     Running     1 (10h ago)   44h
+spiderpool-agent-c2jgh                                       1/1     Running     1 (10h ago)   44h
+
+- controller 由 deployment 控制器来完成
+spiderpool-controller-5cc8487f48-mmrq9                       1/1     Running     0             44h
+spiderpool-init                                              0/1     Completed   0             44h
+</code></pre>
+<h2 id="configmap-secret">配置文件(configmap 、secret )<a class="headerlink" href="#configmap-secret" title="Permanent link">&para;</a></h2>
+<pre><code class="language-shell">- 这里是 spiderpool-controller 启动时依赖的一个 config 文件
+[root@master01 ~]# kubectl get cm -n kube-system | grep -i spider 
+spiderpool-conf                              1      44h
+[root@master01 ~]# kubectl get cm -n kube-system spiderpool-conf -o yaml 
+apiVersion: v1
+data:
+  conf.yml: |
+    ipamUnixSocketPath: /var/run/spidernet/spiderpool.sock
+    networkMode: legacy
+    enableIPv4: true
+    enableIPv6: false
+    enableStatefulSet: true
+    enableSpiderSubnet: true
+    clusterDefaultIPv4IPPool: [default-v4-ippool]
+    clusterDefaultIPv6IPPool: []
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: spiderpool-maweibing
+    meta.helm.sh/release-namespace: kube-system
+  creationTimestamp: &quot;2022-10-29T09:46:08Z&quot;
+  labels:
+    app.kubernetes.io/component: spiderpool-controller
+    app.kubernetes.io/instance: spiderpool-maweibing
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: spiderpool
+    app.kubernetes.io/version: 0.3.0
+    helm.sh/chart: spiderpool-0.3.0
+  name: spiderpool-conf
+  namespace: kube-system
+  resourceVersion: &quot;16777&quot;
+  uid: 4be2b8f2-12b9-464c-9ae0-fc51fd373a30
+
+- 相关的证书文件
+[root@master01 ~]# kubectl get secret -n kube-system | grep -i spider 
+sh.helm.release.v1.spiderpool-maweibing.v1   helm.sh/release.v1   1      45h
+spiderpool-controller-server-certs           kubernetes.io/tls    3      45h
+</code></pre>
+<h2 id="crd-ippool">以 CRD 形式定义 ipPool<a class="headerlink" href="#crd-ippool" title="Permanent link">&para;</a></h2>
+<pre><code class="language-shell">- 查看
+[root@master01 ~]# kubectl get crd | grep -i spider 
+spiderendpoints.spiderpool.spidernet.io               2022-10-29T08:48:07Z
+spiderippools.spiderpool.spidernet.io                 2022-10-29T08:48:07Z
+spiderreservedips.spiderpool.spidernet.io             2022-10-29T08:48:07Z
+spidersubnets.spiderpool.spidernet.io                 2022-10-29T08:48:07Z
+
+- 查看IP子网、IP访问、IP使用信息
+[root@master01 ~]# kubectl get spiderippools.spiderpool.spidernet.io -o yaml 
+apiVersion: v1
+items:
+- apiVersion: spiderpool.spidernet.io/v1
+  kind: SpiderIPPool
+  metadata:
+    creationTimestamp: &quot;2022-10-29T09:46:19Z&quot;
+    finalizers:
+    - spiderpool.spidernet.io
+    generation: 1
+    labels:
+      ipam.spidernet.io/owner-spider-subnet: default-v4-subnet
+    name: default-v4-ippool
+    ownerReferences:
+    - apiVersion: spiderpool.spidernet.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: SpiderSubnet
+      name: default-v4-subnet
+      uid: daa8e1e6-5ebd-4785-a96d-fb585b84a803
+    resourceVersion: &quot;28021&quot;
+    uid: 9756bbb1-134c-4f5c-97aa-01fb7673350e
+  spec:
+    disable: false
+    gateway: 10.29.0.1
+    ipVersion: 4
+    ips:
+    - 10.29.140.50-10.29.140.100
+    subnet: 10.29.0.0/16
+    vlan: 0
+  status:
+    allocatedIPCount: 2
+    allocatedIPs:
+      10.29.140.56:
+        containerID: 4cb556c5ac62a134e37b441341da9a546f6dbfbb594902727345f65b3eafea06
+        interface: net1
+        namespace: maweibing
+        node: worker01
+        ownerControllerName: macvlan-pod-5b7ccffd6c
+        ownerControllerType: ReplicaSet
+        pod: macvlan-pod-5b7ccffd6c-z62sp
+      10.29.140.90:
+        containerID: e1582da9b1d65ac6ee5b0b3a2f7e6709cb98113ffde684c7b78ca66bba722414
+        interface: eth0
+        namespace: default
+        node: worker01
+        ownerControllerName: nginx-macvlan-7dcbd9797b
+        ownerControllerType: ReplicaSet
+        pod: nginx-macvlan-7dcbd9797b-wq9gx
+    totalIPCount: 51
+kind: List
+metadata:
+  resourceVersion: &quot;&quot;
+
+[root@master01 ~]# kubectl get svc -n kube-system | grep -i spider 
+spiderpool-controller                                  ClusterIP      10.233.3.11     &lt;none&gt;        5722/TCP,5720/TCP            45h
+[root@master01 ~]# kubectl get svc -n kube-system spiderpool-controller  -o yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: spiderpool-maweibing
+    meta.helm.sh/release-namespace: kube-system
+  creationTimestamp: &quot;2022-10-29T09:46:08Z&quot;
+  labels:
+    app.kubernetes.io/component: spiderpool-controller
+    app.kubernetes.io/instance: spiderpool-maweibing
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: spiderpool
+    app.kubernetes.io/version: 0.3.0
+    helm.sh/chart: spiderpool-0.3.0
+  name: spiderpool-controller
+  namespace: kube-system
+  resourceVersion: &quot;16781&quot;
+  uid: 5914c1af-b0c3-4eaa-87ad-262679263ee4
+spec:
+  clusterIP: 10.233.3.11
+  clusterIPs:
+  - 10.233.3.11
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: webhook
+    port: 5722
+    protocol: TCP
+    targetPort: webhook
+  - name: http
+    port: 5720
+    protocol: TCP
+    targetPort: http
+  selector:
+    app.kubernetes.io/component: spiderpool-controller
+    app.kubernetes.io/instance: spiderpool-maweibing
+    app.kubernetes.io/name: spiderpool
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
 </code></pre>
 
 
@@ -462,7 +628,7 @@ find / -type f -size +500M -print | xargs /bin/rm -rf
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../linux_find_du_mv_delete/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux 查找清理大文件" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -471,26 +637,11 @@ find / -type f -size +500M -print | xargs /bin/rm -rf
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Linux 查找清理大文件
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../SpiderPool/" class="md-footer__link md-footer__link--next" aria-label="Next: SpiderPool" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              SpiderPool
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
