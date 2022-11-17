@@ -2,9 +2,12 @@ site_name: MyWebSite
 site_url: https://github.com/bertreyking/bertreyking.github.io/
 
 nav:
-    - Home: docs/index.md
-    - Second: docs/second.md
-    - Three: docs/three.md
+    - Home: 
+        - 首页: docs/index.md
+    - Second:
+        - 第二页面: docs/second.md
+    - Three:
+        - 第三页面: docs/three.md
 
 markdown_extensions:
   - toc:
