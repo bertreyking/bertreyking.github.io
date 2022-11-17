@@ -12,21 +12,21 @@
         <meta name="author" content="weibing.ma">
       
       
-        <link rel="canonical" href="https://bertreyking.github.io/">
+        <link rel="canonical" href="https://bertreyking.github.io/ansible/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>贝特雷金</title>
+        <title>Ansible Playbook - 贝特雷金</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
         
       
       
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="贝特雷金" class="md-header__button md-logo" aria-label="贝特雷金" data-md-component="logo">
+    <a href=".." title="贝特雷金" class="md-header__button md-logo" aria-label="贝特雷金" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Ansible Playbook
             
           </span>
         </div>
@@ -168,7 +168,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="贝特雷金" class="md-nav__button md-logo" aria-label="贝特雷金" data-md-component="logo">
+    <a href=".." title="贝特雷金" class="md-nav__button md-logo" aria-label="贝特雷金" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -185,66 +185,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../index.md" class="md-nav__link">
         Home
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes" class="md-nav__link">
-    Kubernetes
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -255,12 +200,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -283,9 +230,131 @@
   
   
     <li class="md-nav__item">
-      <a href="linux_find_du_mv_delete/" class="md-nav__link">
-        Linux 查找清理大文件
+      <a href="../cpu_Load_Average%E5%88%86%E6%9E%90/" class="md-nav__link">
+        CPU 负载分析
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpu_%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/" class="md-nav__link">
+        CPU 上下文切换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iptables/" class="md-nav__link">
+        IPtables 使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iptables/" class="md-nav__link">
+        TCPdump 抓包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns%E8%A7%A3%E6%9E%90%E9%A1%BA%E5%BA%8F/" class="md-nav__link">
+        DNS 解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../json_jq/" class="md-nav__link">
+        JSON 数据处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update%E4%B8%8Eupgrade%E5%8C%BA%E5%88%AB/" class="md-nav__link">
+        UPdate & UPgrade 区别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linux_find_du_mv_delete/" class="md-nav__link">
+        快速查找清理文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ansible Playbook
+      </a>
+      
     </li>
   
 
@@ -317,35 +386,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes" class="md-nav__link">
-    Kubernetes
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -359,23 +399,37 @@
                   
 
 
-<h1 id="_1">任务清单<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
-<ul class="checklist">
-<li><input type="checkbox" disabled checked> Linux 性能 60s 黄金排查时间</li>
-<li><input type="checkbox" disabled> Linux 大文件快速查找清理</li>
+<h1 id="_1">常用模块<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>file</li>
+<li>shell</li>
+<li>command</li>
+<li>copy</li>
+<li>script</li>
+<li>mail</li>
+<li>raw</li>
 </ul>
-<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
-<ul class="checklist">
-<li><input type="checkbox" disabled checked> 基础知识学习</li>
-<li><input type="checkbox" disabled checked> 语句学习</li>
-<li><input type="checkbox" disabled checked> 函数学习</li>
-</ul>
-<h2 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
-<ul class="checklist">
-<li><input type="checkbox" disabled checked> CKA 认证</li>
-<li><input type="checkbox" disabled> CKAD 认证</li>
-</ul>
+<h1 id="ansible-playbook">ansible-playbook<a class="headerlink" href="#ansible-playbook" title="Permanent link">&para;</a></h1>
+<p>```
+示例playbook
+- hosts: cal
+  gather_facts: no
+  tasks:
+  - name: CreateDir
+    file:
+      path: /root/testDir
+      state: directory
+    register: mk_dir
+  - debug: var=mk_dir.diff.after.path</p>
+<ol>
+<li>register: 表示将 file模块执行的结果注入到mk_dir里面.以json格式输出</li>
+<li>debug:
+  常用参数
+  var: 将某个任务执行的输出作为变量传递给debug模块，debug会直接将其打印输出
+  msg: 输出调试的消息
+  verbosity：debug的级别（默认是0级，全部显示）
+ ```</li>
+</ol>
 
 
 
@@ -395,21 +449,21 @@
     
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
-      
         
-        <a href="linux_find_du_mv_delete/" class="md-footer__link md-footer__link--next" aria-label="Next: Linux 查找清理大文件" rel="next">
+        <a href="../linux_find_du_mv_delete/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 快速查找清理文件" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                Previous
               </span>
-              Linux 查找清理大文件
+              快速查找清理文件
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
@@ -438,10 +492,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
     
   </body>
