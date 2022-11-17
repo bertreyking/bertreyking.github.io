@@ -1,5 +1,8 @@
 site_name: MyWebSite
-site_url: https://github.com/bertreyking/bertreyking.github.io/
+site_url: 'https://bertreyking.github.io/'
+site_author: 'weibing.ma'
+site_description: '个人事件记录'
+copyright: '版权归个人所有'
 
 nav:
     - Home: 
