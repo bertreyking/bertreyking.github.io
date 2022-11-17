@@ -31,7 +31,7 @@ jobs:
       # install mkdocs themes
       - run: pip install mkdocs-material
       # install mkdocs plugins
-      - run: pip install markdown-checklist && pip install mkdocs-pdf-export-plugin
+      - run: pip install markdown-checklist && pip install mkdocs-with-pdf
 
       - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Publish docs
