@@ -1,6 +1,7 @@
 # TcpDump 使用方法
 
-1. tcpdump 常用参数介绍
+## tcpdump 常用参数
+
 ```
 [root@k8s-master01 ~]# tcpdump --help
 tcpdump version 4.9.2
@@ -22,7 +23,9 @@ Usage: tcpdump [-aAbdDefhHIJKlLnNOpqStuUvxX#] [ -B size ] [ -c count ]
 -v         #输出较详细的数据 （-vv、-vvv 同理）
 -w         #将数据重定向到文件中，而非标准输出
 ```
-2. tcpdump 常用表达式
+
+## tcpdump 常用表达式
+
 ```
 ! 
 and
@@ -75,6 +78,7 @@ IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [P.], seq 5:7, ack 22, win 229, opt
 IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [.], ack 41, win 229, options [nop,nop,TS val 3915748480 ecr 1630205658], length 0
 IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [F.], seq 7, ack 42, win 229, options [nop,nop,TS val 3915748480 ecr 1630205658], length 0
 ```
-3. 图片补充
-![tcpdump_optimes](https://github.com/bertreyking/linux/blob/main/png/tcpdump_options.png)
-![tcpdump_regx](https://github.com/bertreyking/linux/blob/main/png/tcpdump_regx.png)
+## tcpdump 参数详解
+
+![tcpdump_options](https://github.com/bertreyking/bertreyking.github.io/blob/main/png/tcpdump_options.png)
+![tcpdump_regx](https://github.com/bertreyking/bertreyking.github.io/blob/main/png/tcpdump_regx.png)
