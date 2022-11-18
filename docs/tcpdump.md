@@ -24,7 +24,7 @@ Usage: tcpdump [-aAbdDefhHIJKlLnNOpqStuUvxX#] [ -B size ] [ -c count ]
 -w         #将数据重定向到文件中，而非标准输出
 ```
 
-## tcpdump 常用表达式
+## tcpdump 表达式
 
 ```
 ! 
@@ -80,5 +80,5 @@ IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [F.], seq 7, ack 42, win 229, optio
 ```
 ## tcpdump 参数详解
 
-- ![tcpdump_options](png/tcpdump_options.png)
-- ![tcpdump_regx](png/tcpdump_regx.png)
+![tcpdump_options](png/tcpdump_options.png)
+![tcpdump_regx](png/tcpdump_regx.png)

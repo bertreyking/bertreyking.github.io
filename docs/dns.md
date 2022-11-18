@@ -1,4 +1,4 @@
- # linux 下域名解析顺序及 nameserver 配置
+# linux 下解析顺序及 nameserver 配置
 
 - 参阅 [官方文档1](https://www.thegeekdiary.com/centos-rhel-dns-servers-in-etcresolv-conf-change-after-a-rebootnetwork-service-restart-how-to-make-them-permanent/)
 - 参阅 [官方文档2](https://ma.ttias.be/centos-7-networkmanager-keeps-overwriting-etcresolv-conf/)
