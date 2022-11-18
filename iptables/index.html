@@ -292,6 +292,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#iptables_1" class="md-nav__link">
+    命令：iptables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-ssh-2" class="md-nav__link">
     示例1：(接受任何节点 ssh 会话，需要添加 2 条规则，进出都开启)
   </a>
@@ -445,6 +452,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#iptables_1" class="md-nav__link">
+    命令：iptables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-ssh-2" class="md-nav__link">
     示例1：(接受任何节点 ssh 会话，需要添加 2 条规则，进出都开启)
   </a>
@@ -488,9 +502,8 @@
 
 
 <h1 id="iptables">iptables 开启/禁用端口<a class="headerlink" href="#iptables" title="Permanent link">&para;</a></h1>
-<pre><code>命令：iptables
-
-参数：
+<h2 id="iptables_1">命令：iptables<a class="headerlink" href="#iptables_1" title="Permanent link">&para;</a></h2>
+<pre><code>参数：
 - -A 添加一条 input 规则, INPUT 进、OUTPUT 出
 - -p 指定协议类型，如 tcp / udp
 - -s 源地址
@@ -514,7 +527,7 @@ iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
 iptables -L -n --line-number
 iptables -D INPUT 2
 </code></pre>
-<p>参阅 <a href="https://gist.github.com/tomasinouk/eec152019311b09905cd">SNAT、DNAT 策略</a></p>
+<p>其他资料 <a href="https://gist.github.com/tomasinouk/eec152019311b09905cd">SNAT、DNAT</a></p>
 
 
 
