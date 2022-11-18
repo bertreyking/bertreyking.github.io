@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#jq" class="md-skip">
           Skip to content
         </a>
       
@@ -309,9 +309,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JSON 数据处理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         JSON 数据处理
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    格式化 json 文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    取最大值、列表元素 &lt;=10 个
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    取最大值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考链接
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -386,6 +438,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    格式化 json 文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    取最大值、列表元素 &lt;=10 个
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    取最大值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考链接
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -399,33 +487,33 @@
                   
 
 
-<ol>
-<li>处理json文件</li>
-</ol>
-<pre><code>cat allip | jq -r '[select(any(.;.state==&quot;acquired&quot;))|.tenant_name,.cidr,.pod_name] | @tsv' | grep -v ^$ | awk '/monitoring/'
+<h1 id="jq">jq 进阶<a class="headerlink" href="#jq" title="Permanent link">&para;</a></h1>
+<h2 id="json">格式化 json 文件<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
+<pre><code>cat allip | jq -r .
+cat allip | jq -r '[select(any(.;.state==&quot;acquired&quot;))|.tenant_name,.cidr,.pod_name] | @tsv' \
+          | grep -v ^$ | awk '/monitoring/'
+
 monitoring  10.6.   grafana-6468c88748-xgc68
 monitoring  10.6.   kube-state-metrics-6d98cc688f-drc5r
-monitoring  10.6. prometheus-operator-7f7b8b587b-76bf6
+monitoring  10.6.   prometheus-operator-7f7b8b587b-76bf6
 monitoring  10.6.   kube-metrics-exporter-789954cdf9-gq8g5
-
-
-注释：
+</code></pre>
+<p>注释：
     select(): 查询json数据中符合要求的， == ,!= , &gt;= , &lt;= 等其它
     any(condition): 布尔值数组作为输入，即 true/false，数据为真，则返回true
-    any(generator; condition): generator-json数据按层级划分 ，condition 条件
+    any(generator; condition): generator-json数据按层级划分 ，condition 条件</p>
+<h2 id="10">取最大值、列表元素 &lt;=10 个<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<pre><code>cat /tmp/i_cpu_data.json | jq -r '[.values[][1]]|@json' | jq max -r
 </code></pre>
-<ol>
-<li>取最大值</li>
-</ol>
-<pre><code>cat /tmp/i_cpu_data.json | jq -r '[.values[][1]]|@json' | jq max -r  #列表元素少于10个可以使用
-cat /tmp/i_cpu_data.json | awk 'BEGIN {max = 0} {if ($1+0 &gt; max+0) max=$1} END {print max}'
+<h2 id="_1">取最大值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code>cat /tmp/i_cpu_data.json | awk 'BEGIN {max = 0} {if ($1+0 &gt; max+0) max=$1} END {print max}'
 </code></pre>
-<h1 id="_1">参考链接：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">参考链接<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://stackoverflow.com/questions/57222210/how-can-i-view-pods-with-kubectl-and-filter-based-on-having-a-status-of-imagepul?answertab=active#tab-top">查询集群启动失败的pod</a></li>
-<li><a href="https://stedolan.github.io/jq/manual/#Invokingjq">jq</a></li>
-<li><a href="https://gist.github.com/sloanlance/6b648e51c3c2a69ae200c93c6a310cb6">jq输出格式</a></li>
-<li><a href="https://stackoverflow.com/questions/46530167/jq-select-filter-with-multiple-arguments">jq_select</a></li>
+<li><a href="https://stackoverflow.com/questions/57222210/how-can-i-view-pods-with-kubectl-and-filter-based-on-having-a-status-of-imagepul?answertab=active#tab-top">集群启动失败的pod</a></li>
+<li><a href="https://stedolan.github.io/jq/manual/#Invokingjq">jq 官方手册</a></li>
+<li><a href="https://gist.github.com/sloanlance/6b648e51c3c2a69ae200c93c6a310cb6">jq 输出格式</a></li>
+<li><a href="https://stackoverflow.com/questions/46530167/jq-select-filter-with-multiple-arguments">jq select用法</a></li>
 </ul>
 
 
