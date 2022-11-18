@@ -1,8 +1,9 @@
 # iptables 开启/禁用端口
 
-```
-命令：iptables
 
+## 命令：iptables
+
+```
 参数：
 - -A 添加一条 input 规则, INPUT 进、OUTPUT 出
 - -p 指定协议类型，如 tcp / udp
@@ -40,4 +41,4 @@ iptables -L -n --line-number
 iptables -D INPUT 2
 ```
 
-参阅 [SNAT、DNAT 策略](https://gist.github.com/tomasinouk/eec152019311b09905cd)
+其他资料 [SNAT、DNAT](https://gist.github.com/tomasinouk/eec152019311b09905cd)
