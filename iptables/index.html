@@ -267,9 +267,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          IPtables 使用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         IPtables 使用
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#122ssh-2-22" class="md-nav__link">
+    示例1：(开启22端口，接受来自任何节点的ssh 会话，此处需要添加 2 条规则，允许进出都开启 22 端口)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ssh" class="md-nav__link">
+    示例2:（禁止某主机访问节点的 ssh端口）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-22" class="md-nav__link">
+    示例3:（禁止节点与 某主机的 22 端口进行通信）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    示例4:（删除规则）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -386,6 +438,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#122ssh-2-22" class="md-nav__link">
+    示例1：(开启22端口，接受来自任何节点的ssh 会话，此处需要添加 2 条规则，允许进出都开启 22 端口)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ssh" class="md-nav__link">
+    示例2:（禁止某主机访问节点的 ssh端口）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-22" class="md-nav__link">
+    示例3:（禁止节点与 某主机的 22 端口进行通信）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    示例4:（删除规则）
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -401,6 +489,7 @@
 
 <h1 id="iptables">iptables 开启/禁用端口<a class="headerlink" href="#iptables" title="Permanent link">&para;</a></h1>
 <pre><code>命令：iptables
+
 参数：
 - -A 添加一条 input 规则, INPUT 进、OUTPUT 出
 - -p 指定协议类型，如 tcp / udp
@@ -409,24 +498,23 @@
 - --dport 目标端口
 - --sport 与 dport 相反为源端口 
 - -j 决定是接受还是丢掉数据包，ACCEPT 表示接受，DROP 表示丢掉相关数据包
-
-示例1： (开启22端口，接受来自任何节点的ssh 会话，此处需要添加 2 条规则，允许进出都开启 22 端口)
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+</code></pre>
+<h2 id="122ssh-2-22">示例1：(开启22端口，接受来自任何节点的ssh 会话，此处需要添加 2 条规则，允许进出都开启 22 端口)<a class="headerlink" href="#122ssh-2-22" title="Permanent link">&para;</a></h2>
+<pre><code>iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
-
-示例2：（禁止某主机访问节点的 ssh端口）
-iptables -A INPUT -p tcp -s 192.168.1.x -j DROP
-
-示例3 （禁止节点与 某主机的 22 端口进行通信）
-iptables -A OUTPUT -p tcp -d 192.168.1.x --dport 22 -j DROP
-
-示例4 （删除规则）
-iptables -D OUTPUT -p tcp -d 192.168.1.x --dport 22 -j DROP
-
+</code></pre>
+<h2 id="2-ssh">示例2:（禁止某主机访问节点的 ssh端口）<a class="headerlink" href="#2-ssh" title="Permanent link">&para;</a></h2>
+<pre><code>iptables -A INPUT -p tcp -s 192.168.1.x -j DROP
+</code></pre>
+<h2 id="3-22">示例3:（禁止节点与 某主机的 22 端口进行通信）<a class="headerlink" href="#3-22" title="Permanent link">&para;</a></h2>
+<pre><code>iptables -A OUTPUT -p tcp -d 192.168.1.x --dport 22 -j DROP
+</code></pre>
+<h2 id="4">示例4:（删除规则）<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<pre><code>iptables -D OUTPUT -p tcp -d 192.168.1.x --dport 22 -j DROP
 iptables -L -n --line-number
 iptables -D INPUT 2
 </code></pre>
-<p><a href="https://gist.github.com/tomasinouk/eec152019311b09905cd">iptables_nat规则</a></p>
+<p>参阅 <a href="https://gist.github.com/tomasinouk/eec152019311b09905cd">SNAT、DNAT 策略</a></p>
 
 
 
