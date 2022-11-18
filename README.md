@@ -3,11 +3,16 @@
 ## [工作中遇到的问题](https://github.com/bertreyking)-迁移中
 
 - Linux
-  - CPU
+  - [CPU 负载分析](https://bertreyking.github.io/cpu_Load_Average%E5%88%86%E6%9E%90/)
+  - [CPU 上下文切换](https://bertreyking.github.io/cpu_%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/)
   - Memory
   - Disk
   - Network
   - I/O
+  - [Iptables](https://bertreyking.github.io/iptables/)
+  - [DNS 解析](https://bertreyking.github.io/dns%E8%A7%A3%E6%9E%90%E9%A1%BA%E5%BA%8F/)
+  - [Jq 进阶](https://bertreyking.github.io/json_jq/)
+  - [Update & Upgrade](https://bertreyking.github.io/update%E4%B8%8Eupgrade%E5%8C%BA%E5%88%AB/)
 - Python
   - 基础语法
   - 函数
