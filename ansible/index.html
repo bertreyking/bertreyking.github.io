@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#ansible" class="md-skip">
           Skip to content
         </a>
       
@@ -351,9 +351,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ansible Playbook
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Ansible Playbook
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    常用命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible_1" class="md-nav__link">
+    ansible 常用模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-playbook" class="md-nav__link">
+    ansible-playbook 示例
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -386,6 +431,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    常用命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible_1" class="md-nav__link">
+    ansible 常用模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-playbook" class="md-nav__link">
+    ansible-playbook 示例
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -399,19 +473,25 @@
                   
 
 
-<h1 id="_1">常用模块<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="ansible">Ansible 常规使用<a class="headerlink" href="#ansible" title="Permanent link">&para;</a></h1>
+<h2 id="_1">常用命令<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code>ansible $hostlist -m shell -k -a 'hostname'
+ansible $hostlist -m command -k -a 'hostname'
+ansible $hostlist -m script -k -a /root/hostname.sh
+ansible $hostlist -m copy -k -a 'src=/root/hostname.sh dest=/root/'
+</code></pre>
+<h2 id="ansible_1">ansible 常用模块<a class="headerlink" href="#ansible_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>file</li>
-<li>shell</li>
-<li>command</li>
-<li>copy</li>
-<li>script</li>
-<li>mail</li>
-<li>raw</li>
+<li>file       # 创建文件</li>
+<li>shell      # 在节点中执行 shell / command</li>
+<li>command    # 在节点中执行 command</li>
+<li>copy       # 拷贝文件到节点中</li>
+<li>script     # 将 ansible 节点中脚本发送到被控节点并执行</li>
+<li>mail       # 邮件发送</li>
+<li>raw        # 支持管道</li>
 </ul>
-<h1 id="ansible-playbook">ansible-playbook<a class="headerlink" href="#ansible-playbook" title="Permanent link">&para;</a></h1>
+<h2 id="ansible-playbook">ansible-playbook 示例<a class="headerlink" href="#ansible-playbook" title="Permanent link">&para;</a></h2>
 <p>```
-示例playbook
 - hosts: cal
   gather_facts: no
   tasks:
@@ -421,15 +501,15 @@
       state: directory
     register: mk_dir
   - debug: var=mk_dir.diff.after.path</p>
-<ol>
+<ul>
 <li>register: 表示将 file模块执行的结果注入到mk_dir里面.以json格式输出</li>
-<li>debug:
-  常用参数
-  var: 将某个任务执行的输出作为变量传递给debug模块，debug会直接将其打印输出
-  msg: 输出调试的消息
-  verbosity：debug的级别（默认是0级，全部显示）
- ```</li>
-</ol>
+<li>debug:</li>
+</ul>
+<p>常用参数:
+- var: 将某个任务执行的输出作为变量传递给debug模块，debug会直接将其打印输出
+- msg: 输出调试的消息
+- verbosity：debug的级别（默认是0级，全部显示）
+ ```</p>
 
 
 
