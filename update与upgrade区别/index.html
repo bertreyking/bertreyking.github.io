@@ -12,14 +12,14 @@
         <meta name="author" content="weibing.ma">
       
       
-        <link rel="canonical" href="https://bertreyking.github.io/tcpdump/">
+        <link rel="canonical" href="https://bertreyking.github.io/update%E4%B8%8Eupgrade%E5%8C%BA%E5%88%AB/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>TCPdump 抓包 - 贝特雷金</title>
+        <title>yum update 和 upgrade 的区别 - 贝特雷金</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tcpdump" class="md-skip">
+        <a href="#yum-update-upgrade" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TCPdump 抓包
+              yum update 和 upgrade 的区别
             
           </span>
         </div>
@@ -200,14 +200,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -270,66 +268,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          TCPdump 抓包
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../tcpdump/" class="md-nav__link">
         TCPdump 抓包
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tcpdump_1" class="md-nav__link">
-    tcpdump 常用参数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tcpdump_2" class="md-nav__link">
-    tcpdump 常用表达式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tcpdump_3" class="md-nav__link">
-    tcpdump 参数详解
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -431,35 +374,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#tcpdump_1" class="md-nav__link">
-    tcpdump 常用参数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tcpdump_2" class="md-nav__link">
-    tcpdump 常用表达式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tcpdump_3" class="md-nav__link">
-    tcpdump 参数详解
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -473,85 +387,11 @@
                   
 
 
-<h1 id="tcpdump">TcpDump 使用方法<a class="headerlink" href="#tcpdump" title="Permanent link">&para;</a></h1>
-<h2 id="tcpdump_1">tcpdump 常用参数<a class="headerlink" href="#tcpdump_1" title="Permanent link">&para;</a></h2>
-<pre><code>[root@k8s-master01 ~]# tcpdump --help
-tcpdump version 4.9.2
-libpcap version 1.5.3
-OpenSSL 1.0.2k-fips  26 Jan 2017
-Usage: tcpdump [-aAbdDefhHIJKlLnNOpqStuUvxX#] [ -B size ] [ -c count ]
-                [ -C file_size ] [ -E algo:secret ] [ -F file ] [ -G seconds ]
-                [ -i interface ] [ -j tstamptype ] [ -M secret ] [ --number ]
-                [ -Q|-P in|out|inout ]
-                [ -r file ] [ -s snaplen ] [ --time-stamp-precision precision ]
-                [ --immediate-mode ] [ -T type ] [ --version ] [ -V file ]
-                [ -w file ] [ -W filecount ] [ -y datalinktype ] [ -z postrotate-command ]
-                [ -Z user ] [ expression ]
-
--i ens192  #指定网络接口设备
--t         #对抓取所有包不加时间戳 （-tt、-ttt、-tttt 加上不同的时间戳，如秒、年/月/日/时/分/秒）
--s0        #抓取的数据报不会被截断，便于后续进行分析
--n         #抓取的包以IP地址方式显示，不进行主机名解析 （-nn 抓取的包如ssh，已22 的形式进行显示）
--v         #输出较详细的数据 （-vv、-vvv 同理）
--w         #将数据重定向到文件中，而非标准输出
+<h1 id="yum-update-upgrade">yum update 和 upgrade 的区别<a class="headerlink" href="#yum-update-upgrade" title="Permanent link">&para;</a></h1>
+<pre><code>- update :更新软件包时会保留老版本的软件包 (前提是: /etc/yum.conf 配置文件中该参数 obsoletes=0. 默认为:1)
+- upgreade :更新软件包时会清理老版本的软件包
+- 所以当obsoletes=1时没有任何区别
 </code></pre>
-<h2 id="tcpdump_2">tcpdump 常用表达式<a class="headerlink" href="#tcpdump_2" title="Permanent link">&para;</a></h2>
-<pre><code>! 
-and
-or
-
-示例：（and）
-[root@k8s-master01 ~]# tcpdump tcp -nn -i ens192 -t -s0 and dst 10.6.203.63 and dst port 22
-tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
-IP 10.6.203.60.54956 &gt; 10.6.203.63.22: Flags [S], seq 3113679214, win 29200, options [mss 1460,sackOK,TS val 3908715180 ecr 0,nop,wscale 7], length 0
-IP 10.6.203.60.54956 &gt; 10.6.203.63.22: Flags [.], ack 3504717432, win 229, options [nop,nop,TS val 3908715195 ecr 2496275413], length 0
-IP 10.6.203.60.54956 &gt; 10.6.203.63.22: Flags [.], ack 22, win 229, options [nop,nop,TS val 3908717316 ecr 2496277534], length 0
-IP 10.6.203.60.54956 &gt; 10.6.203.63.22: Flags [P.], seq 0:10, ack 22, win 229, options [nop,nop,TS val 3908721874 ecr 2496277534], length 10
-IP 10.6.203.60.54956 &gt; 10.6.203.63.22: Flags [.], ack 41, win 229, options [nop,nop,TS val 3908721875 ecr 2496282093], length 0
-IP 10.6.203.60.54956 &gt; 10.6.203.63.22: Flags [F.], seq 10, ack 42, win 229, options [nop,nop,TS val 3908721879 ecr 2496282096], length 0
-
-示例：（or）当有多个dst地址时，可以使用or来进行同时抓取
-[root@k8s-master01 ~]# tcpdump tcp -nn -i ens192 -s0 and dst 10.6.203.63 or dst 10.6.203.64  and dst port 22   
-tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
-12:13:28.961250 IP 10.6.203.60.33874 &gt; 10.6.203.64.22: Flags [S], seq 1321753332, win 29200, options [mss 1460,sackOK,TS val 3908829347 ecr 0,nop,wscale 7], length 0
-12:13:28.961857 IP 10.6.203.60.33874 &gt; 10.6.203.64.22: Flags [.], ack 1921664081, win 229, options [nop,nop,TS val 3908829348 ecr 4223571043], length 0
-12:13:28.988597 IP 10.6.203.60.33874 &gt; 10.6.203.64.22: Flags [.], ack 22, win 229, options [nop,nop,TS val 3908829375 ecr 4223571069], length 0
-12:13:30.143741 IP 10.6.203.60.33874 &gt; 10.6.203.64.22: Flags [P.], seq 0:11, ack 22, win 229, options [nop,nop,TS val 3908830530 ecr 4223571069], length 11
-12:13:30.144396 IP 10.6.203.60.33874 &gt; 10.6.203.64.22: Flags [.], ack 41, win 229, options [nop,nop,TS val 3908830531 ecr 4223572225], length 0
-12:13:30.146677 IP 10.6.203.60.33874 &gt; 10.6.203.64.22: Flags [F.], seq 11, ack 42, win 229, options [nop,nop,TS val 3908830533 ecr 4223572227], length 0
-12:13:31.676547 IP 10.6.203.60.55726 &gt; 10.6.203.63.22: Flags [S], seq 2733737364, win 29200, options [mss 1460,sackOK,TS val 3908832063 ecr 0,nop,wscale 7], length 0
-12:13:31.677639 IP 10.6.203.60.55726 &gt; 10.6.203.63.22: Flags [.], ack 963419704, win 229, options [nop,nop,TS val 3908832064 ecr 2496392281], length 0
-12:13:31.712209 IP 10.6.203.60.55726 &gt; 10.6.203.63.22: Flags [.], ack 22, win 229, options [nop,nop,TS val 3908832098 ecr 2496392316], length 0
-12:13:33.055319 IP 10.6.203.60.55726 &gt; 10.6.203.63.22: Flags [P.], seq 0:8, ack 22, win 229, options [nop,nop,TS val 3908833441 ecr 2496392316], length 8
-12:13:33.056220 IP 10.6.203.60.55726 &gt; 10.6.203.63.22: Flags [.], ack 41, win 229, options [nop,nop,TS val 3908833442 ecr 2496393660], length 0
-12:13:33.056626 IP 10.6.203.60.55726 &gt; 10.6.203.63.22: Flags [F.], seq 8, ack 42, win 229, options [nop,nop,TS val 3908833443 ecr 2496393660], length 0
-
-示例：(!) 排除src/dst地址为10.6.203.64/10.6.203.63 为22的数据包
-[root@k8s-master01 ~]# tcpdump tcp -nn -i ens192 -t -s0 and ! dst 10.6.203.63 and ! src 192.168.170.20 and dst port 22      
-tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on ens192, link-type EN10MB (Ethernet), capture size 262144 bytes
-IP 10.6.203.60.50800 &gt; 10.6.203.64.22: Flags [S], seq 2539166541, win 29200, options [mss 1460,sackOK,TS val 3915719486 ecr 0,nop,wscale 7], length 0
-IP 10.6.203.60.50800 &gt; 10.6.203.64.22: Flags [.], ack 253672407, win 229, options [nop,nop,TS val 3915719487 ecr 4230461180], length 0
-IP 10.6.203.60.50800 &gt; 10.6.203.64.22: Flags [.], ack 22, win 229, options [nop,nop,TS val 3915719518 ecr 4230461211], length 0
-IP 10.6.203.60.50800 &gt; 10.6.203.64.22: Flags [P.], seq 0:5, ack 22, win 229, options [nop,nop,TS val 3915731003 ecr 4230461211], length 5
-IP 10.6.203.60.50800 &gt; 10.6.203.64.22: Flags [P.], seq 5:10, ack 22, win 229, options [nop,nop,TS val 3915731850 ecr 4230472697], length 5
-IP 10.6.203.60.50800 &gt; 10.6.203.64.22: Flags [.], ack 41, win 229, options [nop,nop,TS val 3915731850 ecr 4230473544], length 0
-IP 10.6.203.60.50800 &gt; 10.6.203.64.22: Flags [F.], seq 10, ack 42, win 229, options [nop,nop,TS val 3915731851 ecr 4230473544], length 0
-IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [S], seq 631664675, win 29200, options [mss 1460,sackOK,TS val 3915742485 ecr 0,nop,wscale 7], length 0
-IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [.], ack 3229258316, win 229, options [nop,nop,TS val 3915742498 ecr 1630199670], length 0
-IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [.], ack 22, win 229, options [nop,nop,TS val 3915743861 ecr 1630201039], length 0
-IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [P.], seq 0:5, ack 22, win 229, options [nop,nop,TS val 3915748354 ecr 1630201039], length 5
-IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [P.], seq 5:7, ack 22, win 229, options [nop,nop,TS val 3915748478 ecr 1630205533], length 2
-IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [.], ack 41, win 229, options [nop,nop,TS val 3915748480 ecr 1630205658], length 0
-IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [F.], seq 7, ack 42, win 229, options [nop,nop,TS val 3915748480 ecr 1630205658], length 0
-</code></pre>
-<h2 id="tcpdump_3">tcpdump 参数详解<a class="headerlink" href="#tcpdump_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li><img alt="tcpdump_options" src="../png/tcpdump_options.png" /></li>
-<li><img alt="tcpdump_regx" src="../png/tcpdump_regx.png" /></li>
-</ul>
 
 
 
@@ -567,42 +407,6 @@ IP 10.6.203.60.38270 &gt; 10.6.203.62.22: Flags [F.], seq 7, ack 42, win 229, op
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../iptables/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IPtables 使用" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              IPtables 使用
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../dns/" class="md-footer__link md-footer__link--next" aria-label="Next: DNS 解析" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              DNS 解析
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
