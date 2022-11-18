@@ -16,6 +16,7 @@ nav:
         - 'UPdate & UPgrade 区别': 'update_upgrade.md'
         - '快速查找清理文件': 'linux_find_du_mv_delete.md'
         - 'Ansible Playbook': 'ansible.md'
+    - 图库：README.md
 
 markdown_extensions:
     - toc:
