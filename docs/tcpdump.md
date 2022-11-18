@@ -80,5 +80,5 @@ IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [F.], seq 7, ack 42, win 229, optio
 ```
 ## tcpdump 参数详解
 
-![tcpdump_options](https://github.com/bertreyking/bertreyking.github.io/blob/main/png/tcpdump_options.png)
-![tcpdump_regx](https://github.com/bertreyking/bertreyking.github.io/blob/main/png/tcpdump_regx.png)
+- ![tcpdump_options](png/tcpdump_options.png)
+- ![tcpdump_regx](png/tcpdump_regx.png)
