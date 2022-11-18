@@ -489,21 +489,21 @@
 
 <h1 id="jq">jq 进阶<a class="headerlink" href="#jq" title="Permanent link">&para;</a></h1>
 <h2 id="json">格式化 json 文件<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
-<pre><code>cat allip | jq -r .
-
-cat allip | jq -r '[select(any(.;.state==&quot;acquired&quot;))|.tenant_name,.cidr,.pod_name] | @tsv' \
-          | grep -v ^$ | awk '/monitoring/'
+<pre><code>命令：
+cat allip | jq -r .
+cat allip | jq -r '[select(any(.;.state==&quot;acquired&quot;))|.tenant_name,.cidr,.pod_name] | @tsv' | grep -v ^$ | awk '/monitoring/'
 
 输出：
 monitoring  10.6.   grafana-6468c88748-xgc68
 monitoring  10.6.   kube-state-metrics-6d98cc688f-drc5r
 monitoring  10.6.   prometheus-operator-7f7b8b587b-76bf6
 monitoring  10.6.   kube-metrics-exporter-789954cdf9-gq8g5
-</code></pre>
-<p>注释：
+
+说明：
 - select(): 查询 json 数据中符合要求的， == ,!= , &gt;= , &lt;= 等其它
 - any(condition): 布尔值数组作为输入，即 true/false，数据为真，则返回 true
-- any(generator; condition): generator-json 数据按层级划分 ，condition 条件</p>
+- any(generator; condition): generator-json 数据按层级划分 ，condition 条件
+</code></pre>
 <h2 id="10">取最大值、列表元素 &lt;=10 个<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
 <pre><code>cat /tmp/i_cpu_data.json | jq -r '[.values[][1]]|@json' | jq max -r
 </code></pre>
