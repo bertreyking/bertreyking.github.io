@@ -356,7 +356,7 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    进程上下文切换、系统调用的区别？
+    上下文切换、系统调用的区别？
   </a>
   
 </li>
@@ -410,14 +410,14 @@
         
           <li class="md-nav__item">
   <a href="#vmstat-disk" class="md-nav__link">
-    vmstat (分析内存、disk、中断情况)
+    vmstat (分析内存/disk/中断)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vmstat-pidstat" class="md-nav__link">
-    vmstat (如何查看是谁引起的上下文切换呢?),别急我们 pidstat 一探究竟
+  <a href="#pidstat" class="md-nav__link">
+    pidstat 一探究竟(上下文切换的真凶是谁)
   </a>
   
 </li>
@@ -429,6 +429,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    结论
+  </a>
   
 </li>
       
@@ -598,7 +605,7 @@
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    进程上下文切换、系统调用的区别？
+    上下文切换、系统调用的区别？
   </a>
   
 </li>
@@ -652,14 +659,14 @@
         
           <li class="md-nav__item">
   <a href="#vmstat-disk" class="md-nav__link">
-    vmstat (分析内存、disk、中断情况)
+    vmstat (分析内存/disk/中断)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vmstat-pidstat" class="md-nav__link">
-    vmstat (如何查看是谁引起的上下文切换呢?),别急我们 pidstat 一探究竟
+  <a href="#pidstat" class="md-nav__link">
+    pidstat 一探究竟(上下文切换的真凶是谁)
   </a>
   
 </li>
@@ -671,6 +678,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    结论
+  </a>
   
 </li>
       
@@ -710,7 +724,7 @@
 - 比如查看文件，首先调用 open() 函数打开文件，其次调用 read() 函数读取文件内容，最后调用 write() 函数将内容打印到 stdout，最最后再调用 close() 函数关闭文件。
 - 以上系统调用，均是在一个进程运行，所以系统的调用我们成为特权模式切换，而不是上下文切换，但实际上上下文切换也是无法避免的，也就是说在整个调用的过程中，必然会发生 CPU 的上下文切换。
 </code></pre>
-<h4 id="_3">进程上下文切换、系统调用的区别？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h4 id="_3">上下文切换、系统调用的区别？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <pre><code>- 系统调用只是会调用不同函数完成进程的需求，而进程上下文切换需要保存当前进程内核状态和 cpu 寄存器，也会把该进程的虚拟内存，栈等其它保存下来，从而加载下一进程的内核态后，而且也要刷新进程的虚拟内存和用户栈，所以保存上下文以及恢复上下文的过程是有资源消耗的，在大量的进程上下文切换过程，肯定会大量的消耗系统资源，好在进程的切换大部分都是几十纳秒和数微秒级别，所以切换时间还是相当可观的。
 
 - 既然知道了上下文切换可能会导致系统负载较高，那我们需要知道什么时候会发生上下文切换，进程的切换就会有 cpu 上下文的切换，那么只有在进程调度时才需要上下文切换，而 linux为 每个 cpu 维护了一个就绪队列，其中主要是正在运行和正在等待 cpu 的进程(活跃进程)，它们会按照优先级和等待cpu的时间进行排序，然后选择最需要 cpu 的进程，也就是优先级高的，和等待cpu时间最长的进程来运行。
@@ -739,7 +753,7 @@
 <pre><code>- CPU 上下文切换，是保证 Linux 系统正常工作的核心功能之一，一般情况下不需要我们特别关注,但过多的上下文切换，会把 CPU 时间消耗在寄存器、内核栈以及虚拟内存等数据的保存和恢复上，从而缩短进程真正运行的时间，导致系统的整体性能大幅下降
 </code></pre>
 <h3 id="_8">分析工具<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<h4 id="vmstat-disk">vmstat (分析内存、disk、中断情况)<a class="headerlink" href="#vmstat-disk" title="Permanent link">&para;</a></h4>
+<h4 id="vmstat-disk">vmstat (分析内存/disk/中断)<a class="headerlink" href="#vmstat-disk" title="Permanent link">&para;</a></h4>
 <pre><code class="language-shell">- vmstat -d -w -t 2 4 #查看当前系统disk的状态
 
 disk- -------------------reads------------------- -------------------writes------------------ ------IO------- -----timestamp-----
@@ -772,7 +786,7 @@ procs -----------------------memory---------------------- ---swap-- -----io---- 
 通过 us、sys、in 可以判断系统当前是否有大量的中断以及从中得出系统的就绪队列是否过长，也就是正在运行和等待 CPU 的进程数过多，导致了大量的上下文切换，
 而上下文切换又导致了系统 CPU 的占用率升高
 </code></pre>
-<h4 id="vmstat-pidstat">vmstat (如何查看是谁引起的上下文切换呢?),别急我们 pidstat 一探究竟<a class="headerlink" href="#vmstat-pidstat" title="Permanent link">&para;</a></h4>
+<h4 id="pidstat">pidstat 一探究竟(上下文切换的真凶是谁)<a class="headerlink" href="#pidstat" title="Permanent link">&para;</a></h4>
 <pre><code class="language-shell">- pidstat -w -t 1 1   #-w 显示进程上下文切换信息，自愿切换(cswch)和非自愿切换(nvcswch)/s，pid，uid，进程名、 -t 显示线程指标，默认仅显示进程
 
 pidstat -w -t   | awk '{if($6&gt;40) print $0}'   
@@ -828,7 +842,7 @@ TLB:   27516878   27649410   27662689   27530045   TLB shootdowns
 是因为有大量的上下文切换与中断在重新调度引起的
 
 </code></pre>
-<h1 id="_9">结论<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+<h2 id="_9">结论<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <pre><code>- pidstat: 
     -w 上下文切换 -u cpu状态
     -t 显示线程级别信息如，cswch、nvcswch
