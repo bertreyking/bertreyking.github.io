@@ -28,7 +28,6 @@ markdown_extensions:
     - toc:
         permalink: True
         title: 导航
-        top_depth: 5
     - footnotes
     - tables
     - markdown_checklist.extension
