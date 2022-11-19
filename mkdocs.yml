@@ -33,9 +33,15 @@ markdown_extensions:
     - markdown_checklist.extension
 
 theme:
+    name: material
+
+    include_search_page: false
+    search_index_only: true
+    include_homepage_in_sidebar: false
+
     icon:
         repo: fontawesome/brands/github
-    name: material
+
     palette: 
         # Palette toggle for light mode
         - scheme: default
