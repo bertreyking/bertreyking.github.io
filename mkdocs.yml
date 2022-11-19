@@ -6,6 +6,7 @@ site_description: '个人笔记'
 copyright: 'Copyright &copy; bertreyking'
 repo_url: 'https://github.com/bertreyking/bertreyking.github.io'
 repo_name: 'bertreyking/贝特雷金'
+edit_uri: edit/main/docs/
 
 # navlist_info
 INHERIT: navigation.yml
