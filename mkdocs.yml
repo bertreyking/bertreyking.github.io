@@ -1,8 +1,8 @@
 site_name: 贝特雷金
 site_url: 'https://bertreyking.github.io/'
-site_author: 'weibing.ma'
-site_description: '个人事件记录'
-copyright: '版权归个人所有'
+site_author: ‘bertreyking'
+site_description: '个人笔记'
+copyright: 'Copyright &copy; bertreyking'
 repo_url: 'https://github.com/bertreyking/bertreyking.github.io'
 repo_name: 'bertreyking/贝特雷金'
 
@@ -20,8 +20,15 @@ nav:
         - 'Ansible Playbook': 'ansible.md'
 
 markdown_extensions:
+    - meta
+    - def_list
+    - attr_list
+    - abbr
+    - admonition
     - toc:
         permalink: True
+        title: 导航
+        top_depth: 5
     - footnotes
     - tables
     - markdown_checklist.extension
