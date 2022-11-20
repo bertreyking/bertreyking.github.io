@@ -21,23 +21,23 @@
 - [x] 循环语句
 - [x] 列表、字典、元组
 - [x] 函数
-    - [x] 简单使用
+    	- [x] 简单使用
 - [x] Python 工具开发
-    - [x] 迁移脚本
+    	- [x] 迁移脚本 
 - [ ] Flask 学习计划
-    - [x] 完成镜像同步 API 接口开发
-    - [ ] 持续规划中
+    	- [x] 完成镜像同步 API 接口开发
+    	- [ ] 持续规划中
 
 ## 代码仓库学习
 
 - [ ] Github / Gitlab 学习计划
-    - [ ] Github 
-        - [x] Github pages + Mkdocs 自动化构建私人 web 站点
-        - [ ] 持续规划中
+	- [ ] Github 
+        	- [x] Github pages + Mkdocs 自动化构建私人 web 站点
+        	- [ ] 持续规划中
 
-    - [ ] Gitlab
-        - [x] Gitlab-ce 部署
-        - [ ] 持续规划中
+    	- [ ] Gitlab
+        	- [x] Gitlab-ce 部署
+        	- [ ] 持续规划中
 
     - [ ] Git 学习计划
         - [x] Git 基本命令使用
