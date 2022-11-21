@@ -50,5 +50,5 @@ theme:
             name: Switch to light mode
 
 google_analytics:
-  - 'G-00VH2CBF9F'
+  - ['G-00VH2CBF9F', 'bertreyking.github.io'
   - 'auto'
