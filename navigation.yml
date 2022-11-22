@@ -11,3 +11,5 @@ nav:
         - 'Update & Upgrade 区别': 'update_upgrade.md'
         - '快速查找及清理文件': 'linux_find_du_mv_delete.md'
         - 'Ansible 常规使用': 'ansible.md'
+    - Python:
+        - 'Requests 模块': 'requests.md'
