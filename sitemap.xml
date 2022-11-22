@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bertreyking.github.io/requests/</loc>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bertreyking.github.io/tcpdump/</loc>
          <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
