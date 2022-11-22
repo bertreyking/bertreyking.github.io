@@ -58,3 +58,8 @@
 <details><summary>show</summary>
 <p>
 
+- [x] CKA
+- [ ] CKAD
+
+</p>
+</details>
