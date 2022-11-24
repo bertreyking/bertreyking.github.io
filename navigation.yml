@@ -13,4 +13,5 @@ nav:
         - 'Ansible 常规使用': 'ansible.md'
     - Python:
         - 'Requests 模块': 'requests.md'
-        - 'open 函数读写文件': 'python读写文件.md'
+        - 'Open 函数读写文件': 'python读写文件.md'
+        - ‘流程控制语句': '流程控制语句.md'
