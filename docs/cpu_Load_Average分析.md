@@ -172,7 +172,9 @@ Average:        0     32011    0.20   53.39    0.00   53.59     -  stress
 - mpstat         # 查看 cpu 状态(mpstat -P ALL \ sar -P ALL 前者数据更多)
 - sar -P 1,3,5   # 查看指定 cpu 核心的历史负载(10分钟更新一次)
 - pidstat        # 查看进程状态
-- top -H
+- iostat -x 1    # 查看 disk io 状态，间隔 1s
+- sar -n DEV 1   # 查看网络状态 间隔 1s 
+- top -H         # 查看利用较高的进程
 - ps -aux | awk '{if( $3 > 30) print $0}'  # 查看使用率 >30 的进程信息 
 root     17774 35.0  0.0   7312    96 pts/2    R+   15:18   0:40 stress -i 8 -t 600
 root     17775 34.5  0.0   7312    96 pts/2    R+   15:18   0:39 stress -i 8 -t 600
