@@ -1,6 +1,6 @@
 # 事件记录
 
-## Linux 知识归档
+## [Linux](https://www.computerhope.com/unix/overview.htm)
 <details><summary>show</summary>
 <p>
 
@@ -20,7 +20,7 @@
 </details>
 
 
-## Python 学习计划
+## [Python](https://docs.python.org/zh-cn/3.9/tutorial/index.html)
 <details><summary>show</summary>
 <p>
 		
@@ -36,14 +36,14 @@
 <dt>Python 工具开发</dt>
 <dd>- 迁移脚本</dd>
 <dt>Flask 学习计划</dt>
-<dd>- 完成镜像同步 API 接口开发</dd>
+<dd>- 镜像同步 API 接口开发</dd>
 </dl>
 
 </p>
 </details>
 
 
-## 代码仓库学习
+## 代码仓库
 <details><summary>show</summary>
 <p>
 
@@ -60,7 +60,7 @@
 </details>
 
 
-## 认证计划
+## 认证
 <details><summary>show</summary>
 <p>
 
