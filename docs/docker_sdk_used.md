@@ -72,6 +72,6 @@ except Exception as err:
 
 ## 部署遇到的问题
 
-- docker sdk 作为容器的生命周期管理工具时被 flask/diango 调用 push/pull/run 操作时，如果我们是 container 部署在 docker 主机上时，需要将 docker.sock 文件挂载到容器内部、网络模式建议 host 模式，可以避免一些网络不通的问题。也可是尝试使用 docker in docker 的方式
+- docker sdk 作为容器的生命周期管理工具被 flask/diango 调用 push/pull/run 操作时，如果我们是 container 部署在 docker 主机上，需要将 docker.sock 文件挂载到容器内部、网络模式建议 host 模式，可以避免一些网络问题。也可以尝试使用 docker in docker 的方式
 
 ## [参阅文档](https://docker-py.readthedocs.io/en/stable/index.html)
