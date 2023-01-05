@@ -666,6 +666,8 @@
 平均时间:   UID       PID  minflt/s  majflt/s     VSZ    RSS   %MEM StkSize  StkRef  Command
 平均时间:     0   2738052      1.54      0.00 1254560 484040   3.99    136      24  kube-apiserver --advertise-address=10.29.15.79 --allow-privileged=true --anonymous-auth=True --apiserver-count=1 --audit-log-ma
 
+# lsof -p $PID | wc -l  # 可以使用 lsof 来统计该 pid 的文件句柄数集信息，我的环境是打开了 8w+，kill 掉其主进程后内存和 cpu利用有所降低，之所以有 8w+，是因为其中一部分文件删除后没有自动释放掉导致
+
 # 通过 pid 查找其是否有 ppid
 # ps -elF | grep 2738052 | grep -v grep 
 # output
