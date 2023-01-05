@@ -12,20 +12,20 @@
         <meta name="author" content="‘bertreyking'">
       
       
-        <link rel="canonical" href="https://bertreyking.github.io/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/">
+        <link rel="canonical" href="https://bertreyking.github.io/pidstat_vs_ps/">
       
       
-        <link rel="prev" href="../python%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6/">
+        <link rel="prev" href="../ansible/">
       
       
-        <link rel="next" href="../docker_sdk_used/">
+        <link rel="next" href="../requests/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
-        <title>流程控制语句 - 贝特雷金</title>
+        <title>通过 PID 查找 POD - 贝特雷金</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#breakcontinuepass-else" class="md-skip">
+        <a href="#pid-container_id" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              流程控制语句
+              通过 PID 查找 POD
             
           </span>
         </div>
@@ -253,12 +253,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -405,11 +407,75 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pidstat_vs_ps/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          通过 PID 查找 POD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         通过 PID 查找 POD
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="导航">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      导航
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    确认容器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -427,14 +493,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -483,61 +547,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          流程控制语句
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         流程控制语句
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="导航">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      导航
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    code 示例：
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -593,14 +607,28 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    介绍
+    场景
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    code 示例：
+  <a href="#_2" class="md-nav__link">
+    命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    确认容器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    总结
   </a>
   
 </li>
@@ -624,79 +652,113 @@
 
 
 
-<h1 id="breakcontinuepass-else">break、continue、pass 语句、else 子句<a class="headerlink" href="#breakcontinuepass-else" title="Permanent link">&para;</a></h1>
-<h2 id="_1">介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>break 语句，可以用于跳出最近的 for / while 循环.</li>
-<li>else 子句，循环遍历所有元素/条件为假，才执行 else ；与 break 同时出现，则未执行 break 语句时，才会执行 else.</li>
-<li>pass 语句，相当于占位符，实际程序此时不执行任何操作.</li>
-</ul>
-<h2 id="code">code 示例：<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
-<pre><code class="language-python">print('学习1： 循环的 else 语句在未运行 break 时执行; 和 try ... else 类似，它是在子句未触发异常时执行')
+<h1 id="pid-container_id">通过 pid 查找 container_ID<a class="headerlink" href="#pid-container_id" title="Permanent link">&para;</a></h1>
+<h2 id="_1">场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>我的问题是，节点负载很高(cpu/mem)，一时半会定位不到问题所在，且监控层面看到文件句柄数很高18w+，因此通过 pidstat 查看下进程利用率(内存相关)，因为之前出现过主机内存 90+% 的利用率居高不下</p>
+<h2 id="_2">命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre><code class="language-shell"># 查找占用 40g 以上的虚拟内存的 pid
+# pidstat -rsl 1 3 | awk 'NR&gt;1{if($7&gt;40000000) print}'
 
-for n in range(2, 10):
-    for x in range(2, n):
-        if n % x == 0:
-            print(n, 'equals', x, '*', n // x)
-            break
-    else:
-        print(n, 'is a prime number')
+# pidstat -rsl 1 3 | awk 'NR&gt;1{if($7&gt;10000) print}'
+# output
+11时42分28秒   UID       PID  minflt/s  majflt/s     VSZ    RSS   %MEM StkSize  StkRef  Command
+11时42分30秒     0   2738052      1.54      0.00 1254560 484040   3.99    136      24  kube-apiserver --advertise-address=10.29.15.79 --allow-privileged=true --anonymous-auth=True --apiserver-count=1 --audit-log-ma
+平均时间:   UID       PID  minflt/s  majflt/s     VSZ    RSS   %MEM StkSize  StkRef  Command
+平均时间:     0   2738052      1.54      0.00 1254560 484040   3.99    136      24  kube-apiserver --advertise-address=10.29.15.79 --allow-privileged=true --anonymous-auth=True --apiserver-count=1 --audit-log-ma
 
-学习1： 循环的 else 语句在未运行 break 时执行，和 try ... else 类似，它是在子句未触发异常时执行
-2 is a prime number
-3 is a prime number
-4 equals 2 * 2
-5 is a prime number
-6 equals 2 * 3
-7 is a prime number
-8 equals 2 * 4
-9 equals 3 * 3
+# 通过 pid 查找其是否有 ppid
+# ps -elF | grep 2738052 | grep -v grep 
+# output
+4 S root     2738052 2737683 18  80   0 - 313640 futex_ 451296 5 1月02 ?       15:09:26 kube-apiserver --advertise-address=10.29.15.79 --allow-privileged=true --anonymous-auth=True --apiserver-count=1 --audit-log-maxage=30 --audit-log-maxbackup=1 --audit-log-maxsize=100 --audit-log-path=/var/log/audit/kube-apiserver-audit.log --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml --authorization-mode=Node,RBAC --bind-address=0.0.0.0 --client-ca-file=/etc/kubernetes/ssl/ca.crt --default-not-ready-toleration-seconds=300 --default-unreachable-toleration-seconds=300 --enable-admission-plugins=NodeRestriction --enable-aggregator-routing=False --enable-bootstrap-token-auth=true --endpoint-reconciler-type=lease --etcd-cafile=/etc/kubernetes/ssl/etcd/ca.crt --etcd-certfile=/etc/kubernetes/ssl/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/ssl/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --event-ttl=1h0m0s --kubelet-client-certificate=/etc/kubernetes/ssl/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/ssl/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalDNS,InternalIP,Hostname,ExternalDNS,ExternalIP --profiling=False --proxy-client-cert-file=/etc/kubernetes/ssl/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/ssl/front-proxy-client.key --request-timeout=1m0s --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/ssl/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/ssl/sa.pub --service-account-lookup=True --service-account-signing-key-file=/etc/kubernetes/ssl/sa.key --service-cluster-ip-range=10.233.0.0/18 --service-node-port-range=30000-32767 --storage-backend=etcd3 --tls-cert-file=/etc/kubernetes/ssl/apiserver.crt --tls-private-key-file=/etc/kubernetes/ssl/apiserver.key
 
-print('')
-print('学习2： 利用 else 子句在循环最后打印结束语句')
-test = ['test1', 'test2', 'test3']
+# ps -elF | grep 2737683 | grep -v grep 
+# output
+0 S root     2737683       1  0  80   0 - 178160 futex_ 13124  5 1月02 ?       00:03:22 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id fd272ecbe1bf56fb5fbff41130437e5c4b5b444dab2e315a19ed846dc1eacd42 -address /run/containerd/containerd.sock
+4 S 65535    2737744 2737683  0  80   0 -   245 sys_pa     4   2 1月02 ?       00:00:00 /pause
+4 S root     2738052 2737683 18  80   0 - 313640 futex_ 487444 5 1月02 ?       15:09:52 kube-apiserver --advertise-address=10.29.15.79 --allow-privileged=true --anonymous-auth=True --apiserver-count=1 --audit-log-maxage=30 --audit-log-maxbackup=1 --audit-log-maxsize=100 --audit-log-path=/var/log/audit/kube-apiserver-audit.log --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml --authorization-mode=Node,RBAC --bind-address=0.0.0.0 --client-ca-file=/etc/kubernetes/ssl/ca.crt --default-not-ready-toleration-seconds=300 --default-unreachable-toleration-seconds=300 --enable-admission-plugins=NodeRestriction --enable-aggregator-routing=False --enable-bootstrap-token-auth=true --endpoint-reconciler-type=lease --etcd-cafile=/etc/kubernetes/ssl/etcd/ca.crt --etcd-certfile=/etc/kubernetes/ssl/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/ssl/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --event-ttl=1h0m0s --kubelet-client-certificate=/etc/kubernetes/ssl/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/ssl/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalDNS,InternalIP,Hostname,ExternalDNS,ExternalIP --profiling=False --proxy-client-cert-file=/etc/kubernetes/ssl/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/ssl/front-proxy-client.key --request-timeout=1m0s --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/ssl/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/ssl/sa.pub --service-account-lookup=True --service-account-signing-key-file=/etc/kubernetes/ssl/sa.key --service-cluster-ip-range=10.233.0.0/18 --service-node-port-range=30000-32767 --storage-backend=etcd3 --tls-cert-file=/etc/kubernetes/ssl/apiserver.crt --tls-private-key-file=/etc/kubernetes/ssl/apiserver.key
 
-for test_index in range(0, len(test)):
-    print(test[test_index])
-else:
-    print('循环结束！！！')
+# ps -ejH | grep -B 10 2738052  # 打印进程树
+# output
+2737683 2737683    1163 ?        00:03:24   containerd-shim
+2737744 2737744 2737744 ?        00:00:00     pause
+2738052 2738052 2738052 ?        15:17:02     kube-apiserver
 
-学习2： 利用 else 子句在循环最后打印结束语句
-test1
-test2
-test3
-循环结束！！！
-
-print('')
-print('学习3： continue 子句, 进行匹配并打印出不匹配的')
-
-for  n in range(2, 8):
-    if n == 2:
-        print(n, '= 2')
-        continue
-    print(n)
-
-学习3： continue 子句, 进行匹配并打印出不匹配的
-2 = 2
-3
-4
-5
-6
-7
-
-print('')
-print('学习4： pass 子句, 不执行任何操作，仅是语法需要这个语句, 相当于占位符')
-number = [1, 2, 3, 4, 10]
-
-for n in range(0, len(number)):
-    if number[n] != 10:
-        pass
-    else:
-        print(number[n])
-
-学习4： pass 子句, 不执行任何操作，仅是语法需要这个语句, 相当于占位符
-10
+# 结论
+pid 2738052 是由 ppid 2737683 启动，而 2737683 是 containerd-shim 的 pid，因此 2738052 是 containerd-shim 的线程，也就是由它启动的 container
 </code></pre>
+<h2 id="_3">确认容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<pre><code class="language-shell"># nerdctl ps | awk 'NR&gt;1{print $1}' | while read line;do echo -n &quot;ContainerID: &quot; $line;  echo &quot; Pid: &quot; `nerdctl inspect $line --format=&quot;{{.State.Pid}}&quot;`;done
+
+# output
+ContainerID:  001c06d37aa3 Pid:  3894654
+ContainerID:  10948947ffe2 Pid:  3190
+ContainerID:  12e473bf2092 Pid:  2738736
+ContainerID:  2036c51b2eb1 Pid:  2638619
+ContainerID:  31f6916a4d19 Pid:  2144173
+ContainerID:  3e7aaa92e14d Pid:  946163
+ContainerID:  40290d1314b0 Pid:  2737814
+ContainerID:  41ef80123273 Pid:  2738052
+ContainerID:  422a631fa706 Pid:  4151
+ContainerID:  4bf701e368e1 Pid:  2737820
+ContainerID:  535448e5cdd0 Pid:  2638612
+ContainerID:  5ea9dbdedc25 Pid:  4711
+ContainerID:  5f17a1c82e2a Pid:  2565
+ContainerID:  68ddb09e71ba Pid:  4962
+ContainerID:  69cf228ae17d Pid:  4054
+ContainerID:  74d39157ea3c Pid:  2738680
+ContainerID:  77cf2b283806 Pid:  5056
+ContainerID:  7acb0441a3ad Pid:  2737689
+ContainerID:  821dcae2eaca Pid:  1023468
+ContainerID:  88060b9b98da Pid:  2448
+ContainerID:  9179c60702c4 Pid:  2647586
+ContainerID:  91ea0bcd6c1f Pid:  2737993
+ContainerID:  95b54dbb14d0 Pid:  2286
+ContainerID:  9cc402cb9ca2 Pid:  2716
+ContainerID:  9dab08f90039 Pid:  946124
+ContainerID:  ade4806bb944 Pid:  2518
+ContainerID:  aee2b96ee5d9 Pid:  2544
+ContainerID:  b3519e63725c Pid:  2737695
+ContainerID:  b5bd53932069 Pid:  2295
+ContainerID:  b816d668b027 Pid:  3962
+ContainerID:  c8198ad4cc28 Pid:  2543
+ContainerID:  d27c2a0c9a22 Pid:  1021592
+ContainerID:  e9bdb4ad0fd6 Pid:  2350
+ContainerID:  f41fa9aee395 Pid:  2737656
+ContainerID:  f56f55af0af3 Pid:  4065
+ContainerID:  fd272ecbe1bf Pid:  2737744
+
+# grep 2738052 
+# outout
+ContainerID:  41ef80123273 Pid:  2738052
+
+# nerdctl ps | grep 41ef80123273
+# output
+41ef80123273    k8s-gcr.m.daocloud.io/kube-apiserver:v1.24.7                             &quot;kube-apiserver --ad…&quot;    3 days ago      Up                 k8s://kube-system/kube-apiserver-master01/kube-apiserver
+
+# kubectl get pod -o wide --all-namespaces  | grep kube-apiserver-master01
+# output
+kube-system           kube-apiserver-master01                                      1/1     Running            11 (3d9h ago)    67d   10.29.15.79      master01   &lt;none&gt;           &lt;none&gt;
+</code></pre>
+<h2 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>pidstat -rsl 1 3 | awk 'NR&gt;1{if($7&gt;40000000) print}'</li>
+</ul>
+<p><code>shell
+  -r 查看 pid 占用的内存信息，虚拟内存/实际使用内存/占总内存的百分比
+  -s 查看 pid 占用的内存堆栈
+  -l 显示详细的 command</code></p>
+<ul>
+<li>ps -elF ｜ grep $PID </li>
+</ul>
+<p>```shell
+  -e 所有进程
+  -L 显示线程，带有 LWP 和 NLWP 列，结合 -f 使用
+  -l 通常是输出格式的控制
+  -F 按指定格式打印进程/线程，信息更完整,结合 -el</p>
+<p>-elF 可以找到其线程的 ppid，我的环境中一次就定位到 pid，说明 pod 没有其它的主进程或者更多的线程，而像业务 pod，一般都是用 shell 脚本拉起主进程，而主进程再启动更多的线程，如果要定为就是多次使用 ps -elF 进行 ppid 的查询，并最后通过 ppid 来找到该线程/进程是哪个容器和 pod 产生的 </p>
+<p>-efL 可以精确的统计每个进程的线程数</p>
+<p>-ejH # 打印进程树、更直观
+  ```</p>
 
 
 
