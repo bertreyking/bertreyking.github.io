@@ -101,6 +101,7 @@ kube-system           kube-apiserver-master01                                   
 - pidstat -rsl 1 3 | awk 'NR>1{if($7>40000000) print}'
 
   ```shell
+
   -r 查看 pid 占用的内存信息，虚拟内存/实际使用内存/占总内存的百分比
   -s 查看 pid 占用的内存堆栈
   -l 显示详细的 command
@@ -109,6 +110,7 @@ kube-system           kube-apiserver-master01                                   
 - ps -elF ｜ grep $PID 
 
   ```shell
+
   -e 所有进程
   -L 显示线程，带有 LWP 和 NLWP 列，结合 -f 使用
   -l 通常是输出格式的控制
@@ -119,6 +121,4 @@ kube-system           kube-apiserver-master01                                   
   -efL 可以精确的统计每个进程的线程数
   
   -ejH # 打印进程树、更直观
-  ```
-
-  
+  ```  
