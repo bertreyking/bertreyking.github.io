@@ -17,3 +17,5 @@ nav:
         - 'Open 函数读写文件': 'python读写文件.md'
         - '流程控制语句': '流程控制语句.md'
         - 'DockerSDK 使用': 'docker_sdk_used.md'
+    - 开源组件:
+        - 'CluserPedia 对接 k8s 集群': 'cluserpedia-对接-k8s.md'
