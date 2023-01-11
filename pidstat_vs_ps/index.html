@@ -796,22 +796,23 @@ kube-system           kube-apiserver-master01                                   
 <ul>
 <li>pidstat -rsl 1 3 | awk 'NR&gt;1{if($7&gt;40000000) print}'</li>
 </ul>
-<p><code>shell
-  -r 查看 pid 占用的内存信息，虚拟内存/实际使用内存/占总内存的百分比
+<p>```shell</p>
+<p>-r 查看 pid 占用的内存信息，虚拟内存/实际使用内存/占总内存的百分比
   -s 查看 pid 占用的内存堆栈
-  -l 显示详细的 command</code></p>
+  -l 显示详细的 command
+  ```</p>
 <ul>
 <li>ps -elF ｜ grep $PID </li>
 </ul>
-<p>```shell
-  -e 所有进程
+<p>```shell</p>
+<p>-e 所有进程
   -L 显示线程，带有 LWP 和 NLWP 列，结合 -f 使用
   -l 通常是输出格式的控制
   -F 按指定格式打印进程/线程，信息更完整,结合 -el</p>
 <p>-elF 可以找到其线程的 ppid，我的环境中一次就定位到 pid，说明 pod 没有其它的主进程或者更多的线程，而像业务 pod，一般都是用 shell 脚本拉起主进程，而主进程再启动更多的线程，如果要定为就是多次使用 ps -elF 进行 ppid 的查询，并最后通过 ppid 来找到该线程/进程是哪个容器和 pod 产生的 </p>
 <p>-efL 可以精确的统计每个进程的线程数</p>
 <p>-ejH # 打印进程树、更直观
-  ```</p>
+  ```  </p>
 
 
 
