@@ -294,7 +294,7 @@ metadata:
 
 - 域名访问 http://mwb.k3straefik.com/dashboard/
 
-![image-20230317161150720](png/image-20230317161150720.png)
+![image-20230317161150720](../png/image-20230317161150720.png)
 
 ## 附录
 
