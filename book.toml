@@ -6,7 +6,7 @@ src = "src"
 
 [output.html] 
 theme = "theme"
-default-theme = "light"
+default-theme = "rust"
 preferred-dark-theme = "navy"
 curly-quotes = true
 mathjax-support = false
