@@ -2,7 +2,7 @@
 
 ## 架构
 
-![image-20230323142110363](/Users/kingskye/Library/Application Support/typora-user-images/image-20230323142110363.png)
+![image-20230323142110363](png/image-20230323142110363.png)
 
 ## 组件
 
