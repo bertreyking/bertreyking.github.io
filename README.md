@@ -1,24 +1,23 @@
 # 贝特雷金
 
-## [工作中遇到的问题](https://github.com/bertreyking)-迁移中
+## [工作日志](https://github.com/bertreyking)-迁移中
+
 ### 开源组件
 - Kubernetes (k8s)
 - k3s (轻量型 k8s)
 - ClusterPedia
 - Ansible
+
 ### 系统
 - Linux
 ### 语言
 - Python
-
-
 
 ## 使用 [GitHub Pages](https://docs.github.com/en/pages/quickstart) 快速发布
 
 参阅 [mdBook 官方安装文档](https://rust-lang.github.io/mdBook/format/theme/index.html)
 
 - [安装](https://rust-lang.github.io/mdBook/guide/installation.html)
-
 
 ## 建站 [参考链接](https://medium.com/medialesson/documentation-in-github-pages-with-mkdocs-readthedocs-theme-920b283215d1)
 
