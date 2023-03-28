@@ -25,7 +25,7 @@
   - [使用]()
 
 - [Imagesyncer]()
-  - [使用](other/imagesyncer/imagesyncer-步骤.md)
+  - [使用](other/imagesyncer/imagesyncer.md)
 ---
 
 # [自动化运维工具]()
