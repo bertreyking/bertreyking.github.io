@@ -19,7 +19,6 @@
   - [ClusterPedia 对接 k8s 集群](clusterpedia/ClusterPedia-对接-k8s.md)
 
 - [Prometheus](other/prometheus/prometheus.md)
-  - [架构](other/prometheus/prometheus.md)
   - [安装]()
   - [配置]()
   - [使用]()
