@@ -6,10 +6,15 @@
 - Kubernetes (k8s)
 - k3s (轻量型 k8s)
 - ClusterPedia
+- Prometheus
+- imagesyncer
+
+### 自动化运维工具
 - Ansible
 
 ### 系统
 - Linux
+
 ### 语言
 - Python
 
@@ -23,4 +28,5 @@
 
 ## Git [安装](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)、[初始化](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE)
 
-[Mac 中 Git 安装与 GitHub 基本使用](https://www.jianshu.com/p/7edb6b838a2e)
+- [Mac 中 Git 安装与 GitHub 基本使用](https://www.jianshu.com/p/7edb6b838a2e)
+- [生成新的 SSH-key 并且添加到 ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
