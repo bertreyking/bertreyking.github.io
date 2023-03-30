@@ -21,7 +21,7 @@
 
 ## 架构
 
-![Prometheus](../png/prometheus-architecture.png)
+![Prometheus](.../png/prometheus-architecture.png)
 
 ## 组件
 
