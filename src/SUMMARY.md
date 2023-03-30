@@ -9,8 +9,7 @@
   - [Cronjob 使用](kubernetes/cronjob.md)
   - [探针](kubernetes/liveness_readiness_startup.md)
 
-- [k3s (轻量型 k8s)]()
-  - [架构](k3s/k3s-架构篇.md)
+- [k3s (轻量型 k8s)](k3s/k3s-架构篇.md)
   - [安装](k3s/k3s-安装篇.md)
 
 - [ClusterPedia]()
