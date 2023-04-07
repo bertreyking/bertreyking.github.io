@@ -2,4 +2,4 @@
 
 ## 文件系统
 
-- 【xfs_repair](./startupFailed.md)
+- [xfs_repair](./startupFailed.md)
