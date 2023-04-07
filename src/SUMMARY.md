@@ -40,7 +40,7 @@
 
   - [DNS](linux/dns.md)
   - [命令手册]()
-    - [Echo 自动移输出](linux/echo定制脚本输出颜色.md)
+    - [Echo 自定义输出](linux/echo定制脚本输出颜色.md)
     - [Json 文本处理](linux/json_jq.md)
     - [查找大文件](linux/linux_find_du_mv_delete.md)
     - [Iptables 使用](linux/iptables.md)
