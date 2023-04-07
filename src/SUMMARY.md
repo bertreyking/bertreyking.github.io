@@ -40,14 +40,16 @@
 
   - [DNS](linux/dns.md)
   - [命令手册]()
-    - [Echo 定义输出颜色](linux/echo定制脚本输出颜色.md)
-    - [Json 文本处理_jq](linux/json_jq.md)
+    - [Echo 自动移输出](linux/echo定制脚本输出颜色.md)
+    - [Json 文本处理](linux/json_jq.md)
     - [查找大文件](linux/linux_find_du_mv_delete.md)
     - [Iptables 使用](linux/iptables.md)
     - [Tcpdump 使用](linux/tcpdump.md)
   - [窥探容器]()
     - [自定义容器路由](linux/container_addroutes.md)
     - [通过 Pid 查找 ContainerID](linux/pidstat_vs_ps.md)
+  - [故障排查]
+    - [断电导致系统启动失败](linux/startupFailed.md)
 ---
 
 # Python
