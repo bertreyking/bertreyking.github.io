@@ -45,7 +45,7 @@
     - [查找大文件](linux/linux_find_du_mv_delete.md)
     - [Iptables 使用](linux/iptables.md)
     - [Tcpdump 使用](linux/tcpdump.md)
-  - [shell](linux/shell.md)
+  - [Shell](linux/shell.md)
     - [条件判断](linux/shell_condition.md)
     - [特殊变量](linux/shell_variable.md)
   - [窥探容器]()
