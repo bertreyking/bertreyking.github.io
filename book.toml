@@ -14,3 +14,7 @@ copy-fonts = true
 additional-css = ["theme/css/variables.css"] 
 no-section-label = false
 git-repository-url = "https://github.com/bertreyking/bertreyking.github.io" 
+
+[output.html.fold]
+enable = true
+level = 2
