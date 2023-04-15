@@ -12,8 +12,7 @@
 - [k3s (轻量型 k8s)](k3s/k3s-架构篇.md)
   - [安装](k3s/k3s-安装篇.md)
 
-- [ClusterPedia]()
-  - [ClusterPedia 概念介绍](clusterpedia/ClusterPedia-概念介绍.md)
+- [ClusterPedia](clusterpedia/ClusterPedia-概念介绍.md)
   - [ClusterPedia 安装步骤](clusterpedia/ClusterPedia-安装步骤-v0.6.3.md)
   - [ClusterPedia 对接 k8s 集群](clusterpedia/ClusterPedia-对接-k8s.md)
 

@@ -6,8 +6,7 @@
 
 ```shell
 # PediaCluster 是什么？
-官方解释：Clusterpedia 中使用 PediaCluster 资源来代表一个需要同步资源的集群
-个人理解：我称它为实例，一个集群一个实例，这个实例包含了需要同步给 clusterpedia 的认证和资源信息
+个人理解：我称它为实例，一个集群一个实例，这个实例包含了认证信息和需要同步给 clusterpedia 的资源信息
 
 # PediaCluster 怎么用？
 - 包含集群集群的认证信息
