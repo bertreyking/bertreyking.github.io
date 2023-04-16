@@ -9,7 +9,7 @@
   - [Cronjob 使用](kubernetes/cronjob.md)
   - [探针](kubernetes/liveness_readiness_startup.md)
 
-- [k3s (轻量型 k8s)](k3s/k3s-架构篇.md)
+- [K3s (轻量型 k8s)](k3s/k3s-架构篇.md)
   - [安装](k3s/k3s-安装篇.md)
 
 - [ClusterPedia](clusterpedia/ClusterPedia-概念介绍.md)
@@ -21,7 +21,7 @@
   - [配置]()
   - [使用]()
 
-- [image-syncer 使用](other/imagesyncer/image-syncer.md)
+- [Image-syncer 使用](other/imagesyncer/image-syncer.md)
 ---
 
 # [自动化运维工具]()
@@ -54,12 +54,13 @@
     - [断电导致系统启动失败](linux/startupFailed.md)
 ---
 
-# Python
-
-- [控制语句](python/流程控制语句.md)
-- [读写文件](python/python读写文件.md)
-- [包使用]()
-  - [DockerSDK 使用](python/docker_sdk_used.md)
-  - [Request 使用](python/requests.md)
+# 语言
+ 
+- [Python]()
+  - [控制语句](python/流程控制语句.md)
+  - [读写文件](python/python读写文件.md)
+  - [包使用]()
+    - [DockerSDK 使用](python/docker_sdk_used.md)
+    - [Request 使用](python/requests.md)
 ---
 
