@@ -12,6 +12,7 @@ curly-quotes = true
 mathjax-support = false
 copy-fonts = true
 additional-css = ["theme/css/variables.css"] 
+additional-js = ["/theme/custom.js"]
 no-section-label = false
 git-repository-url = "https://github.com/bertreyking/bertreyking.github.io" 
 
