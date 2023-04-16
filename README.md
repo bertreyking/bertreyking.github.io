@@ -23,6 +23,7 @@
 参阅 [mdBook 官方安装文档](https://rust-lang.github.io/mdBook/format/theme/index.html)
 
 - [安装](https://rust-lang.github.io/mdBook/guide/installation.html)
+- [配置](https://rust-lang.github.io/mdBook/format/configuration/renderers.html#html-renderer-options)
 
 ## 建站 [参考链接](https://medium.com/medialesson/documentation-in-github-pages-with-mkdocs-readthedocs-theme-920b283215d1)
 
