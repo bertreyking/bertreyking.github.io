@@ -20,6 +20,8 @@
   - [安装]()
   - [配置]()
   - [使用]()
+  - [故障排查](other/prometheus/troubleshooting.md)
+    - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
 
 - [Image-syncer 使用](other/imagesyncer/image-syncer.md)
 ---
