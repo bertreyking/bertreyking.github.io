@@ -19,7 +19,7 @@
 - [Prometheus](other/prometheus/prometheus.md)
   - [安装]()
   - [配置]()
-  - [使用]()
+  - [使用](other/prometheus/prometheus-query.md)
   - [故障排查](other/prometheus/troubleshooting.md)
     - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
 
