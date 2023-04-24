@@ -30,7 +30,7 @@ centos-swap
 ## 结论
 
 - 根据查到的磁盘设备和文件系统，怀疑是 centos-root 根分区导致，因启动启动需要加载该分区下的配置，一次启动失败 (断电当时应用系统仍在写数据，导致该分区产生脏数据)
-- 对于重要数据建议先备份再进行修复 [xfs_backup_restore][Backing Up and Restoring XFS File Systems]
+- 对于重要数据建议先备份再进行修复 [Backing Up and Restoring XFS File Systems][Backing Up and Restoring XFS File Systems]
 
 ## 修复
 
@@ -49,4 +49,4 @@ xfs_repair /dev/mapper/centos-root
 
 - [Repairing an XFS File System](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsrepair)
 - [Running repairs on XFS Filesystems](https://www.thegeekdiary.com/running-repairs-on-xfs-filesystems/)
-[Backing Up and Restoring XFS File Systems]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsbackuprestore
+- [Backing Up and Restoring XFS File Systems]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsbackuprestore
