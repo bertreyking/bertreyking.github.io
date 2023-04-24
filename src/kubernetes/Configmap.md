@@ -11,7 +11,7 @@
 
 - 名字必须是一个合法的 [DNS 子域名](https://kubernetes.io/zh-cn/docs/concepts/overview/working-with-objects/names#dns-subdomain-names)
 - `data` 或 `binaryData` 字段下面的键名称必须由字母数字字符或者 `-`、`_` 或 `.` 组成、键名不可有重叠
--  v1.19 开始，可以添加`immutable`字段到 ConfigMap 定义中，来创建[不可变更的 ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/#configmap-immutable)
+-  v1.19 开始，可以添加`immutable`字段到 ConfigMap 定义中，来创建 [不可变更的 ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/#configmap-immutable)
 - ConfigMap 需要跟引用它的资源在同一命名空间下
 - ConfigMap 更新新，应用会自动更新，kubelet 会定期检索配置是否最新
 - [SubPath](https://kubernetes.io/zh-cn/docs/concepts/storage/volumes#using-subpath) 卷挂载的容器将不会收到 ConfigMap 的更新，需要重启应用
