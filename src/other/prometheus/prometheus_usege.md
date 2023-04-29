@@ -2,7 +2,7 @@
 
 ## 查询类
 
-- [常用函数](other/prometheus/prometheus-query.md)
+- [常用函数](./prometheus-query.md)
 
 ## 配置类
 
