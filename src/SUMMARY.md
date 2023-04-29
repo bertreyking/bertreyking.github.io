@@ -21,7 +21,7 @@
   - [配置]()
   - [使用](other/prometheus/prometheus_usege.md)
     - [常用函数](other/prometheus/prometheus-query.md)
-    - [标签自定义配置]()
+    - [标签自定义配置](other/prometheus/relabel_configs.md)
   - [故障排查](other/prometheus/troubleshooting.md)
     - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
 
