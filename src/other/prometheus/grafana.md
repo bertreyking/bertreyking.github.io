@@ -20,6 +20,7 @@ label_values(node_filesystem_size_bytes,instance)
 
 Preview of values
 All 10.6.203.60:9100 10.6.203.62:9100 10.6.203.63:9100 10.6.203.64:9100
+```
 
 源数据如下：(Prometheus Graph 输出)
 
@@ -28,4 +29,4 @@ node_filesystem_size_bytes{device="/dev/mapper/centos-root",fstype="xfs",instanc
 node_filesystem_size_bytes{device="/dev/mapper/centos-root",fstype="xfs",instance="10.6.203.62:9100",job="node_exporter-metrics",mountpoint="/"}
 ```
 
-[Prometheus template variables]:https : //grafana.com/docs/grafana/latest/datasources/prometheus/template-variables/
+[Prometheus template variables]: https : //grafana.com/docs/grafana/latest/datasources/prometheus/template-variables/
