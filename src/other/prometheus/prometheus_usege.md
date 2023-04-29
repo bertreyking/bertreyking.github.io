@@ -6,7 +6,7 @@
 
 ## 配置类
 
-- [标签自定义配置](./prometheus-relabel_config.md)
+- [标签自定义配置](./relabel_configs.md)
 - [告警规则]()
 
 ## Grafana 类
