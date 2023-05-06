@@ -55,6 +55,7 @@
   - [窥探容器]()
     - [自定义容器路由](linux/container_addroutes.md)
     - [通过 Pid 查找 ContainerID](linux/pidstat_vs_ps.md)
+    - [tc 模拟网络延迟](linux/container_use_tc.md)
   - [故障排查](linux/troubleshooting.md)
     - [断电导致系统启动失败](linux/startupFailed.md)
 ---
