@@ -33,11 +33,13 @@ Ncat: 0 bytes sent, 0 bytes received in 0.01 seconds.
 
 ## 配置规则
 
-### 临时验证
+### 临时配置
 
 - 添加规则，为了效果更明显这里我们设置为设置 100ms
 
 ```shell
+[root@worker02 ~]# docker inspect `docker ps | grep centos | awk '{print $1}'` --format={{.State.Pid}}
+299938
 [root@worker02 ~]# nsenter -t 299938 -n tc qdisc add dev eth0 root handle 1: prio
 [root@worker02 ~]# nsenter -t 299938 -n tc filter add dev eth0 parent 1:0 protocol ip prio 1 u32 match ip dst 10.2x.16.2x/32 match ip dport 22 0xffff flowid 2:1
 [root@worker02 ~]# nsenter -t 299938 -n tc filter add dev eth0 parent 1:0 protocol ip prio 1 u32 match ip dst 10.2x.16.2x/32 match ip dport 22 0xffff flowid 2:1
@@ -47,8 +49,6 @@ Ncat: 0 bytes sent, 0 bytes received in 0.01 seconds.
 - 查看规则是否添加成功
 
 ```shell
-[root@worker02 ~]# docker inspect `docker ps | grep centos | awk '{print $1}'` --format={{.State.Pid}}
-299938
 [root@worker02 ~]# nsenter -t 299938 -n tc -s qdisc show dev eth0
 qdisc prio 1: root refcnt 2 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
  Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0) 
@@ -56,6 +56,7 @@ qdisc prio 1: root refcnt 2 bands 3 priomap  1 2 2 2 1 2 0 0 1 1 1 1 1 1 1 1
 qdisc netem 2: parent 1:1 limit 1000 delay 100.0ms
  Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0) 
  backlog 0b 0p requeues 0 
+
 [root@worker02 ~]# nsenter -t 299938 -n tc -s filter show dev eth0
 filter parent 1: protocol ip pref 1 u32 chain 0 
 filter parent 1: protocol ip pref 1 u32 chain 0 fh 800: ht divisor 1 
@@ -138,7 +139,7 @@ spec:
     spec:
       initContainers:
         - name: init-centos-tc
-          image: '10.29.140.12/base/centos:7.9.2009'
+          image: '10.2x.14x.1x/base/centos:7.9.2009'
           command:
             - /bin/sh
           args:
@@ -159,7 +160,7 @@ spec:
             privileged: true
       containers:
         - name: centos-centos
-          image: '10.29.140.12/base/centos:7.9.2009'
+          image: '10.2x.14x.1x/base/centos:7.9.2009'
           command:
             - sleep
           args:
@@ -177,7 +178,7 @@ spec:
       dnsPolicy: ClusterFirst
       securityContext: {}
       imagePullSecrets:
-        - name: centos-centos-10.29.140.12
+        - name: centos-centos-10.2x.14x.1x
       schedulerName: default-scheduler
       dnsConfig:
         options:
