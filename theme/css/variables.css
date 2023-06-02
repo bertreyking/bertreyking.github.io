@@ -2,10 +2,10 @@
 /* Globals */
 
 :root {
-    --sidebar-width: 100px;
+    --sidebar-width: 80px;
     --page-padding: 10px;
-    --content-max-width: 1360px;
-    --menu-bar-height: 50px;
+    --content-max-width: 1260px;
+    --menu-bar-height: 25px;
     --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
     --code-font-size: 0.875em /* please adjust the ace font size accordingly in editor.js */
 }
