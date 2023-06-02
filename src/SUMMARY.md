@@ -26,6 +26,9 @@
   - [故障排查](other/prometheus/troubleshooting.md)
     - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
 
+- [Skywalking]()
+  - [安装](other/skywalking/skywalking_install.md)
+
 - [Image-syncer 使用](other/imagesyncer/image-syncer.md)
 ---
 
