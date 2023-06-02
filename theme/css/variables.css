@@ -2,7 +2,7 @@
 /* Globals */
 
 :root {
-    --sidebar-width: 265px;
+    --sidebar-width: 100px;
     --page-padding: 10px;
     --content-max-width: 1360px;
     --menu-bar-height: 50px;
