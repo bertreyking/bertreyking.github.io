@@ -50,7 +50,7 @@
 
    ```shell
    [root@master01 ~]# cd skywalking-kubernetes/
-   [root@master01 skywalking-kubernetes]# helm -n skywalking install skywalking chart/skywalking --version "0.0.0-b670c41d94a82ddefcf466d54bab5c492d88d772" --set oap.image.tag=9.2.0 --set oap.storageType=elasticsearch --set ui.image.tag=9.2.0
+   [root@master01 skywalking-kubernetes]# helm install skywalking -n skywalking chart/skywalking --set oap.image.tag=9.4.0 --set ui.image.tag=9.4.0 --set oap.storageType=elasticsearch -f chart/skywalking/values.yaml
    
    NAME: skywalking
    LAST DEPLOYED: Fri Jun  2 14:23:10 2023
@@ -71,46 +71,43 @@
    Learn more, please visit https://skywalking.apache.org/
    Get the UI URL by running these commands:
      echo "Visit http://127.0.0.1:8080 to use your application"
-     kubectl port-forward svc/skywalking-skywalking-helm-ui 8080:80 --namespace skywalking
+     kubectl port-forward svc/skywalking-skywalking-helm-ui 8080:80 --namespace skywalking # 已经更改为 NodePort 可忽略
    #################################################################################
    ######   WARNING: Persistence is disabled!!! You will lose your data when   #####
    ######            the SkyWalking's storage ES pod is terminated.            #####
    #################################################################################
    ```
 
-3. 使用 NodePort 方式暴露 sky walking-ui
+3. 自定义 values.yaml 参数
 
-   ```shell
-   [root@master01 skywalking-kubernetes]# kubectl get svc -n skywalking skywalking-skywalking-helm-ui -o yaml 
-   apiVersion: v1
-   kind: Service
-   metadata:
-     annotations:
-       meta.helm.sh/release-name: skywalking
-       meta.helm.sh/release-namespace: skywalking
-     labels:
-       app: skywalking
-       app.kubernetes.io/managed-by: Helm
-       chart: skywalking-helm-4.4.0
-       component: ui
-       dce.daocloud.io/app: skywalking
-       heritage: Helm
-       release: skywalking
-     name: skywalking-skywalking-helm-ui
-     namespace: skywalking
-   spec:
-     clusterIP: 172.31.31.202
-     externalTrafficPolicy: Cluster
-     ipFamily: IPv4
+   ```yaml
+   - OAP 服本书调整为 1
+   oap:
+     name: oap
+     image:
+       repository: skywalking.docker.scarf.sh/apache/skywalking-oap-server
+       tag: null  # Must be set explicitly
+       pullPolicy: IfNotPresent
+     storageType: null
      ports:
-     - nodePort: 37364
-       port: 80
-       protocol: TCP
-       targetPort: 8080
-     selector:
-       app: skywalking
-       component: ui
-         release: skywalking
-     sessionAffinity: None
-     type: NodePort
+       grpc: 11800
+       rest: 12800
+     replicas: 1
+     
+   - UI Service 类型更改为 NodePort
+   ui:
+     name: ui
+     replicas: 1
+     image:
+       repository: skywalking.docker.scarf.sh/apache/skywalking-ui
+       tag: null  # Must be set explicitly
+       pullPolicy: IfNotPresent
+     nodeAffinity: {}
+     nodeSelector: {}
+     tolerations: []
+     service:
+       type: NodePort
+   
+   - UI Deployment.containers.env.name.SW_OAP_ADDRESS
+   需要更改为 http://cluserip:12800,默认配置启动后 ui.log 提示连接 oap:12800 failed
    ```
