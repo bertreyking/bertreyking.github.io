@@ -111,3 +111,9 @@
    - UI Deployment.containers.env.name.SW_OAP_ADDRESS
    需要更改为 http://cluserip:12800,默认配置启动后 ui.log 提示连接 oap:12800 failed
    ```
+
+## UI 界面(9.4.0)
+
+![拓扑图](../png/skywalking_map.png)
+
+![JVM](../png/skywalking_jvm.png)
