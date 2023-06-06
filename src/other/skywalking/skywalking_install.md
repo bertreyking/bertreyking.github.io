@@ -114,6 +114,6 @@
 
 ## UI 界面(9.4.0)
 
-![拓扑图](../png/skywalking_map.png)
+![拓扑图](/png/skywalking_map.png)
 
-![JVM](../png/skywalking_jvm.png)
+![JVM](/png/skywalking_jvm.png)
