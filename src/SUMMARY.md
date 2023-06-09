@@ -14,7 +14,7 @@
 
 - [ClusterPedia](clusterpedia/ClusterPedia-概念介绍.md)
   - [ClusterPedia 安装步骤](clusterpedia/ClusterPedia-安装步骤-v0.6.3.md)
-  - [ClusterPedia 对接 k8s 集群](clusterpedia/ClusterPedia-对接-k8s.md)
+  - [ClusterPedia 对接 k8s](clusterpedia/ClusterPedia-对接-k8s.md)
 
 - [Prometheus](other/prometheus/prometheus.md)
   - [安装]()
