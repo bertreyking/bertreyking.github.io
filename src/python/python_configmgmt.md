@@ -11,6 +11,6 @@
 
 无论是获取环境变量还是读取配置文件，配置管理的目标是提供一种灵活、可维护和可配置的方式来管理应用程序的设置和参数。这使得应用程序更具适应性，并允许在不同环境中轻松配置和部署应用程序。
 
-[1]: python/python_getenv.md
-[2]: python/python_getconfig.md
+[1]: ./python_getenv.md
+[2]: ./python_getconfig.md
 
