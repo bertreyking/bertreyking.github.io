@@ -90,4 +90,8 @@ docker.io/neuvector/scanner:latest
 
 ![NeuVector](/png/neuvector_ui.jpg)
 
+## 报告
+
+![NeuVector_Report](/png/neuvector_use.jpeg)
+
 [1]:https://github.com/neuvector/neuvector-helm
