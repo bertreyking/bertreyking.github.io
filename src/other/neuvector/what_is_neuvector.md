@@ -11,16 +11,10 @@ NeuVector 是一款专门为容器安全而设计的安全平台，提供全面�
 - 组件
 
   1. Manager：为用户提供了统一的管理 UI，便于用户查看安全事件、管理安全解决方案、规则等
-
   2. Controller：Backend 服务器及控制器，管理如 Enforcer、Scanner 等其他组件，分发安全策略及调度扫描任务
-
   3. Scanner：用户执行漏洞扫描、基线扫描等任务
-
   4. Enforcer：一个轻量级的容器，用于拦截系统事件，执行安全策略等。通常以 Daemon set 运行再集群中的每个节点上
-
   5. Updater：用于更新 CVE 数据库
-
-  
 
 NeuVector 支持多种容器平台
 
