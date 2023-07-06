@@ -9,6 +9,9 @@
   - [Cronjob 使用](kubernetes/cronjob.md)
   - [Probe 使用](kubernetes/liveness_readiness_startup.md)
   - [ConfigMap 使用](kubernetes/Configmap.md)
+  - [故障排查]()
+    - [kubelet PLEG](kubernetes/kubelet-pleg-error.md)
+
 - [K3s (轻量型 k8s)](k3s/k3s-架构篇.md)
   - [安装](k3s/k3s-安装篇.md)
 
