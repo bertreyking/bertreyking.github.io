@@ -78,6 +78,14 @@ IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [P.], seq 5:7, ack 22, win 229, opt
 IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [.], ack 41, win 229, options [nop,nop,TS val 3915748480 ecr 1630205658], length 0
 IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [F.], seq 7, ack 42, win 229, options [nop,nop,TS val 3915748480 ecr 1630205658], length 0
 ```
+## tcpdump 按大小、数量抓包
+```
+tcpdump tcp -i eth0 -t -s0 -nn and dst port 8080 or src port 8080 -C 100 -W 100 -w xxx_$(date +"%H-%M-%S").pacp
+
+-C :数量
+-W :大小
+```
+
 ## tcpdump 参数详解
 
 ![tcpdump_options](../png/tcpdump_options.png)
