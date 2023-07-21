@@ -66,6 +66,8 @@
 
      }
      ```
+   - [http.conf][http]
+   - [https.conf][https] 
 
    - 自签证书 [ssl][ssl]
 
@@ -106,3 +108,6 @@
 [ssl]: https://githubshirongxin.github.io/Gitlab%E4%BD%BF%E7%94%A8%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6%E5%BC%80%E5%90%AFhttps/
 
 [disalble_IP_access]:https://wsgzao.github.io/post/nginx-default-server/
+
+[http]: https://raw.githubusercontent.com/bertreyking/bertreyking.github.io/main/src/other/gitlab/http.conf
+[https]: https://raw.githubusercontent.com/bertreyking/bertreyking.github.io/main/src/other/gitlab/gitlab-http.conf
