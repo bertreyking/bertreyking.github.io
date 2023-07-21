@@ -57,7 +57,7 @@
      - 需要在 nginx 配置文件中加入以下配置
      server {
        listen *:80 default_server;
-       listen $:443 default_server;
+       listen *:443 default_server;
          
        server_name _;
        return 403;
