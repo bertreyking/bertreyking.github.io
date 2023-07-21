@@ -15,7 +15,7 @@
 
    - 启动容器 [dockerhub][image]
 
-     ```yaml
+     ```shell
      sudo docker run --detach \
        --hostname mawb.gitlab.com \
        --publish 443:443 --publish 80:80 \
@@ -31,7 +31,7 @@
 
    - 初始密码
 
-     ```yaml
+     ```shell
      docker exec -it $containerID /bin/cat /etc/gitlab/initial_root_password
      ```
 
@@ -39,7 +39,7 @@
 
    - 允许 80、443
 
-     ```yaml
+     ```shell
      - gitlab 使用 gitlab.rb 的形式来自定义 gitlab_server 配置
      - 修改以下配置
      [root@gitlab-repo-1 data]# pwd
@@ -51,15 +51,19 @@
      letsencrypt['auto_renew'] = false                                                 # 禁用自动续签证书，这步可以不用
      ```
 
-   - 禁止 IP 访问
+   - 禁止 IP 访问 [disalble_IP_access][disalble_IP_access]
 
      ```nginx
      - 需要在 nginx 配置文件中加入以下配置
      server {
        listen *:80 default_server;
+       listen $:443 default_server;
          
        server_name _;
        return 403;
+       ssl_certificate /etc/gitlab/ssl/mawb.gitlab.com.crt;
+       ssl_certificate_key /etc/gitlab/ssl/mawb.gitlab.com.key;
+
      }
      ```
 
@@ -95,12 +99,10 @@
      ```
 
 
-
----
-
 [install]:https://docs.docker.com/engine/install/centos/
 
 [image]: https://hub.docker.com/r/gitlab/gitlab-ce/tags?page=1&name=14.8.6
 
 [ssl]: https://githubshirongxin.github.io/Gitlab%E4%BD%BF%E7%94%A8%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6%E5%BC%80%E5%90%AFhttps/
 
+[disalble_IP_access]:https://wsgzao.github.io/post/nginx-default-server/
