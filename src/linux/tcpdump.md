@@ -82,8 +82,8 @@ IP 10.6.203.60.38270 > 10.6.203.62.22: Flags [F.], seq 7, ack 42, win 229, optio
 ```
 tcpdump tcp -i eth0 -t -s0 -nn and dst port 8080 or src port 8080 -C 100 -W 100 -w xxx_$(date +"%H-%M-%S").pacp
 
--C :数量
--W :大小
+-C :限制大小，单位是 M
+-W :限制数量，自动覆盖前期的数据
 ```
 
 ## tcpdump 参数详解

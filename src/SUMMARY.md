@@ -35,6 +35,9 @@
 - [NeuVector](other/neuvector/what_is_neuvector.md)
   - [安装](other/neuvector/neuvector_install.md)
 
+- [Gitlab]()
+  - [安装](other/gitlab/gitlab_install.md)
+
 - [Image-syncer 使用](other/imagesyncer/image-syncer.md)
 ---
 
