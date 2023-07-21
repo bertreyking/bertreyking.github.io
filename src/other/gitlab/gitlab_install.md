@@ -63,7 +63,7 @@
      }
      ```
 
-   - [自签证书][ssl]
+   - 自签证书 [ssl][ssl]
 
    - 配置生效
 
@@ -102,5 +102,5 @@
 
 [image]: https://hub.docker.com/r/gitlab/gitlab-ce/tags?page=1&name=14.8.6
 
-[ ssl ]: https://githubshirongxin.github.io/Gitlab%E4%BD%BF%E7%94%A8%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6%E5%BC%80%E5%90%AFhttps/
+[ssl]: https://githubshirongxin.github.io/Gitlab%E4%BD%BF%E7%94%A8%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6%E5%BC%80%E5%90%AFhttps/
 
