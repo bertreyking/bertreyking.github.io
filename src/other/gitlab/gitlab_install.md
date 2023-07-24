@@ -63,7 +63,7 @@
        return 403;
        ssl_certificate /etc/gitlab/ssl/mawb.gitlab.com.crt;
        ssl_certificate_key /etc/gitlab/ssl/mawb.gitlab.com.key;
-
+     
      }
      ```
    - [http.conf][http]
@@ -99,6 +99,19 @@
      - 对 ningx 的修改，也可以单独重启 nginx
      gitlab-ctl restart nginx && gitlab-ctl status nginx
      ```
+   
+   - 重置 root 密码
+   
+     ```shell
+     - 进入容器内部
+     root@mawb:/# gitlab-rake "gitlab:password:reset[root]"
+     Enter password: 
+     Confirm password: 
+     Password successfully updated for user with username root.
+     - 重启容器即可
+     ```
+   
+     
 
 
 [install]:https://docs.docker.com/engine/install/centos/
