@@ -49,6 +49,8 @@
      nginx['custom_nginx_config'] = "include /var/opt/gitlab/nginx/conf/http.conf;"    # 自定义 nginx 配置(容器内路径)，开启 80，所以修改
      letsencrypt['enable'] = false                                                     # 禁用 letsencrypt
      letsencrypt['auto_renew'] = false                                                 # 禁用自动续签证书，这步可以不用
+     nginx['ssl_certificate'] = "/etc/gitlab/ssl/mawb.gitlab.com.crt"                  # pem、crt
+     nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/mawb.gitlab.com.key"              # key
      ```
 
    - 禁止 IP 访问 [disalble_IP_access][disalble_IP_access]
@@ -95,6 +97,7 @@
      
      - 重新加载配置
      gitlab-ctl reconfigure
+     gitlab-ctl restart
      
      - 对 ningx 的修改，也可以单独重启 nginx
      gitlab-ctl restart nginx && gitlab-ctl status nginx
@@ -123,4 +126,5 @@
 [disalble_IP_access]:https://wsgzao.github.io/post/nginx-default-server/
 
 [http]: https://raw.githubusercontent.com/bertreyking/bertreyking.github.io/main/src/other/gitlab/http.conf
+
 [https]: https://raw.githubusercontent.com/bertreyking/bertreyking.github.io/main/src/other/gitlab/gitlab-http.conf
