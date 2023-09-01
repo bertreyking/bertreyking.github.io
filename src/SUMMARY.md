@@ -44,6 +44,11 @@
 - [Image-syncer 使用](other/imagesyncer/image-syncer.md)
 ---
 
+# [CICD]()
+
+- [Jenkins 学习]()
+  - [通过 Github 自动构建镜像(CI)](other/jenkins/autobuildimg.md)
+
 # [自动化运维工具]()
 
 - [Ansible]()
