@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mawb</title>
+</head>
+<body>
+    <p>文章数量：<span id="articleCount">加载中...</span></p>
+
+    <script>
+        // 使用 mdbook 自动生成的目录文件路径
+        const tocPath = "./SUMMARY.md";
+
+        // 发起 AJAX 请求获取目录文件
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", tocPath, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const toc = JSON.parse(xhr.responseText);
+                const articleCount = toc.length; // 获取文章数量
+                const articleCountElement = document.getElementById("articleCount");
+                articleCountElement.textContent = articleCount; // 更新显示文章数量的元素
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
