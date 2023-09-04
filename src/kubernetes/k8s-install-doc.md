@@ -597,3 +597,16 @@
    echo "source <(kubectl completion bash)" >> ~/.bashrc
    ```
 
+## 附录
+
+- kubeadm init 过程中报错 `Unfortunately, an error has occurred: timed out waiting for the condition`
+
+  ![k8s-install-error](../png/k8s-install-error.jpg)
+  
+
+- 现象
+  1. 🈚️任何 pod 创建，kubelet、containerd 没有任何日志且服务运行正常
+  2. 以为是超时导致，更改了 init 时使用的集群配置文件  `timeoutForControlPlane: 10m0s` 无效
+
+- 解决
+  1. 重启节点后，init 集群成功 # 怀疑时 selinux 配置导致的
