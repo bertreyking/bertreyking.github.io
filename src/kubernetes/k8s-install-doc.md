@@ -162,7 +162,7 @@
    install -m 755 runc.amd64 /usr/local/sbin/runc
    ```
 
-   - 安装 cni - 建议不执行- 安装 kubelet 时会自动安装(使用最新的 cni，可能会出现兼容性问题)
+   - 安装 cni - 建议不执行、安装 kubelet 时会自动安装(使用最新的 cni，可能会出现兼容性问题)
 
    ```shell
    mkdir -p /opt/cni/bin
@@ -378,13 +378,13 @@
    kubernetesVersion: 1.28.1        # 修改 k8s 版本
    networking:
      dnsDomain: cluster.local
-     podSubnet: 172.16.15.0/22       # 集群的 pod ip段，冲突的话需要更改
-     serviceSubnet: 10.96.0.0/12     # 集群的 service ip段，冲突的话需要更改
+     podSubnet: 172.16.15.0/22       # 集群的 pod ip 段，冲突的话需要更改
+     serviceSubnet: 10.96.0.0/12     # 集群的 service ip 段，冲突的话需要更改
    scheduler: {}
    ---
    kind: KubeletConfiguration
    apiVersion: kubelet.config.k8s.io/v1beta1
-   cgroupDriver: systemd             # 与系统和containerd 使用一致的 cgroup 驱动
+   cgroupDriver: systemd             # 与系统和 containerd 使用一致的 cgroup 驱动
    ```
 
 ## 部署集群
