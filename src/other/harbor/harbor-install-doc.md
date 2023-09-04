@@ -5,13 +5,15 @@ date: 2023-09-04
 keywords: [harbor,docker-compose]
 ---
 
+# Harbor 部署与维护
+
 ## 下载离线介质
 
 - [harbor-offline-installer][harbor-offline-installer]
 
-```shell
-wget https://github.com/goharbor/harbor/releases/download/v2.9.0/harbor-offline-installer-v2.9.0.tgz
-```
+  ```shell
+  wget https://github.com/goharbor/harbor/releases/download/v2.9.0/harbor-offline-installer-v2.9.0.tgz
+  ```
 
 ## 部署
 
@@ -21,14 +23,14 @@ wget https://github.com/goharbor/harbor/releases/download/v2.9.0/harbor-offline-
   3. Harbor with Clair        # 带镜像漏洞扫描
   4. Harbor with Chart Repository Service    # 带 Helm 支持的 Chart 仓库
   5. Harbor with two or all three of Notary, Clair, and Chart Repository Service    # 基本全部打包安装
-
-```shell
-- Just Harbor 
-sudo ./install.sh
-
-- 打包安装全部组件，不需要的可以去掉 --with-xxxxx 对应参数即可
-sudo ./install.sh --with-notary --with-clair --with-chartmuseum
-```
+  
+  ```shell
+  - Just Harbor 
+  sudo ./install.sh
+  
+  - 打包安装全部组件，不需要的可以去掉 --with-xxxxx 对应参数即可
+  sudo ./install.sh --with-notary --with-clair --with-chartmuseum
+  ```
 
  - 注意事项
 
@@ -74,15 +76,15 @@ sudo ./install.sh --with-notary --with-clair --with-chartmuseum
 
 - 停止 harbor 组件
 
-```shell
-docker-compose down -v
-```
+  ```shell
+  docker-compose down -v
+  ```
 
 - 启动 harbor 组件
 
-```shell
-docker-compose up -d
-```
+  ```shell
+  docker-compose up -d
+  ```
 
 ## 访问
 
@@ -96,11 +98,6 @@ docker-compose up -d
 
 附录：
 
-- 安装文档
-
 [harbor-offline-installer]: https://github.com/goharbor/harbor/releases/download/v2.9.0/harbor-offline-installer-v2.9.0.tgz '离线安装介质'
 [run-install-script]: https://goharbor.io/docs/1.10/install-config/run-installer-script/ '安装步骤'
-
-- 参考文档
-
 [Harbor with Notary ]: https://github.com/zj1244/Blog/blob/master/2019/harbor%E7%9A%84Notary%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95.md
