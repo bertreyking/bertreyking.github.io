@@ -568,7 +568,7 @@
   这里不做展示
   ```
 
-## client 工具使用与优化 ctr & crictl & kubectl 自动补全的使用
+## client 工具使用与优化
 
 1. containerd 自带 `ctr cli` 工具
 
