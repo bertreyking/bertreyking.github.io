@@ -41,6 +41,9 @@
 - [Gitlab]()
   - [安装](other/gitlab/gitlab_install.md)
 
+- [Harbor]()
+  - [安装](other/harbor/harbor-install-doc.md)
+
 - [Image-syncer 使用](other/imagesyncer/image-syncer.md)
 ---
 
