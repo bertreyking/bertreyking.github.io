@@ -49,7 +49,26 @@
      Jul 03 20:06:30 xxx-worker-004 kubelet[1946644]: I0703 20:06:30.616041 1946644 kubelet_node_status.go:486] Recording NodeNotReady event message for node xxx-worker-004
      ```
 
-  3. 当前状态下，节点可以创建 、删除 pod
+  3. 当前状态下，节点可以创建 、删除 pod (约 2-3 份钟一次 pleg 报错，持续 1-2 分钟左右)
+
+  4. dockerd 相关日志 (某个容器异常后，触发了 dockerd 的 stream copy error: reading from a closed fifo 错误，20分钟后开始打 Pleg 日志 )
+
+     ```shell
+     Sep 11 15:24:35 [localhost] kubelet: I0911 15:24:35.062990    3630 setters.go:77] Using node IP: "172.21.0.9"
+     Sep 11 15:24:36 [localhost] dockerd: time="2023-09-11T15:24:36.535271938+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:36 [localhost] dockerd: time="2023-09-11T15:24:36.535330354+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:36 [localhost] dockerd: time="2023-09-11T15:24:36.536568097+08:00" level=error msg="Error running exec 18c5bcece71bee792912ff63a21b29507a597710736a131f03197fec1c44e8f7 in container: OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: \"ps\": executable file not found in $PATH: unknown"
+     Sep 11 15:24:36 [localhost] dockerd: time="2023-09-11T15:24:36.825485167+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:36 [localhost] dockerd: time="2023-09-11T15:24:36.825494046+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:36 [localhost] dockerd: time="2023-09-11T15:24:36.826617470+08:00" level=error msg="Error running exec 6a68fb0d78ff1ec6c1c302a40f9aa80f0be692ba6971ae603316acc8f2245cf1 in container: OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: \"ps\": executable file not found in $PATH: unknown"
+     Sep 11 15:24:38 [localhost] dockerd: time="2023-09-11T15:24:38.323407978+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:38 [localhost] dockerd: time="2023-09-11T15:24:38.323407830+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:38 [localhost] dockerd: time="2023-09-11T15:24:38.324556918+08:00" level=error msg="Error running exec 824f974debe302cea5db269e915e3ba26e2e795df4281926909405ba8ef82f10 in container: OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: \"ps\": executable file not found in $PATH: unknown"
+     Sep 11 15:24:38 [localhost] dockerd: time="2023-09-11T15:24:38.636923557+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:38 [localhost] dockerd: time="2023-09-11T15:24:38.636924060+08:00" level=error msg="stream copy error: reading from a closed fifo"
+     Sep 11 15:24:38 [localhost] dockerd: time="2023-09-11T15:24:38.638120772+08:00" level=error msg="Error running exec 5bafe0da5f5240e00c2e6be99e859da7386276d49c6d907d1ac7df2286529c1e in container: OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: \"ps\": executable file not found in $PATH: unknown"
+     Sep 11 15:24:39 [localhost] kubelet: W0911 15:24:39.181878    3630 kubelet_pods.go:880] Unable to retrieve pull secret n-npro-dev/harbor for n-npro-dev/product-price-frontend-846f84c5b9-cpd4q due to secret "harbor" not found.  The image pull may not succeed.
+     ```
 
 - 排查方向
 
@@ -67,7 +86,13 @@
 
   3. docker ps / info 正常输出
 
-     - 发现有残留的 container 和 pasue 容器，手动 ***docker rm -f*** 无法删除
+     - 发现有残留的 container 和 pasue 容器，手动 ***docker rm -f*** 无法删除(发现 up 容器可以 inspect、残留的不行)
+
+       - 最后通过 kill -9 $pid 杀了进程，残留容器被清理
+
+         ```shell 
+         ps -elF | egrep "进程名/PID" #别杀错了呦，大兄弟！！！
+         ```
 
      - 后续再遇到可以看下 containerd 的日志
 
@@ -88,6 +113,32 @@
 
   6. 查看是否由于 apiserver 限流导致的 worker 节点短暂性 NotReady 
      -  重启后拿的数据，没有参考意义，3*master 数据最大的 18
+
+  7. 残留容器的清理过层
+
+     ```shell
+     - 残留容器
+     [root@dce-worker-002 ~]# docker ps -a | grep 'dss-controller'
+     cd99bc468028   3458637e441b                                        "/usr/local/bin/moni…"    25 hours ago    Up 25 hours                           k8s_dss-controller-pod_dss-controller-pod-66c79dd5ff-nvmg6_dss_e04c891f-1101-401f-bbdc-65f08c6261b5_0
+     ed56fd84a466   172.21.0.99/kube-system/dce-kube-pause:3.1          "/pause"                  25 hours ago    Up 25 hours                           k8s_POD_dss-controller-pod-66c79dd5ff-nvmg6_dss_e04c891f-1101-401f-bbdc-65f08c6261b5_0
+     1ea1fc956e08   172.21.0.99/dss-5/controller                        "/usr/local/bin/moni…"    2 months ago    Up 2 months                           k8s_dss-controller-pod_dss-controller-pod-ddb8dd4-h8xff_dss_745deb5c-3aa0-4584-a627-908d9fd142fb_0
+     74ea748ea198   172.21.0.99/kube-system/dce-kube-pause:3.1          "/pause"                  2 months ago    Exited (0) 25 hours ago               k8s_POD_dss-controller-pod-ddb8dd4-h8xff_dss_745deb5c-3aa0-4584-a627-908d9fd142fb_0
+     
+     - 清理过程 (通过 up 的容器获取到进程名，然后 ps 检索出来)
+     [root@dce-worker-002 ~]# ps -elF | grep "/usr/local/bin/monitor -c"
+     4 S root     1428645 1428619  0  80   0 -   636 poll_s   840  15 Jul10 ?        00:01:55 /usr/local/bin/monitor -c
+     4 S root     2939390 2939370  0  80   0 -   636 poll_s   752   5 Sep11 ?        00:00:01 /usr/local/bin/monitor -c
+     0 S root     3384975 3355866  0  80   0 - 28203 pipe_w   972  23 16:04 pts/0    00:00:00 grep --color=auto /usr/local/bin/monitor -c
+     
+     [root@dce-worker-002 ~]# ps -elF | egrep "1428619|1428645"
+     0 S root     1428619       1  0  80   0 - 178392 futex_ 12176 22 Jul10 ?        01:47:37 /usr/bin/containerd-shim-runc-v2 -namespace moby -id 1ea1fc956e08ceecb1b729b2553e47ae8cb6dd954e4096afb23d604f814d3fb9 -address /run/containerd/containerd.sock   # 这个是所有容器的父进程 containerd，不要杀了
+     4 S root     1428645 1428619  0  80   0 -   636 poll_s   840   3 Jul10 ?        00:01:55 /usr/local/bin/monitor -c
+     0 S root     3299955 1428619  0  80   0 - 209818 futex_ 12444 30 Aug13 ?        00:00:01 runc --root /var/run/docker/runtime-runc/moby --log /run/containerd/io.containerd.runtime.v2.task/moby/1ea1fc956e08ceecb1b729b2553e47ae8cb6dd954e4096afb23d604f814d3fb9/log.json --log-format json exec --process /tmp/runc-process119549742 --detach --pid-file /run/containerd/io.containerd.runtime.v2.task/moby/1ea1fc956e08ceecb1b729b2553e47ae8cb6dd954e4096afb23d604f814d3fb9/b1f66414652628a5e3eea0b59d7ee09c0a2a76bcb6f491e3d911536b310c430a.pid 1ea1fc956e08ceecb1b729b2553e47ae8cb6dd954e4096afb23d604f814d3fb9
+     0 R root     3387029 3355866  0  80   0 - 28203 -        980  30 16:05 pts/0    00:00:00 grep -E --color=auto 1428619|1428645
+     0 S root     3984582 1428645  0  80   0 - 838801 futex_ 36652 10 Aug13 ?        00:11:32 /usr/local/bin/controller -j dss-svc-controller.dss -a 10.202.11.63 -b 10.202.11.63
+     [root@dce-worker-002 ~]# kill -9 1428645
+     [root@dce-worker-002 ~]# kill -9 3984582
+     ```
 
 - 结论
 
@@ -169,15 +220,12 @@
    - 通过 kubelet metrics 查看当时更新状态时卡在什么位置
    curl --cacert /etc/daocloud/xxx/cert/apiserver.crt -H "Authorization: Bearer $(cat /root/xxx-admin.token)" https://127.0.0.1:10250/debug/pprof/goroutine?debug=1 -k
    curl --cacert /etc/daocloud/xxx/cert/apiserver.crt -H "Authorization: Bearer $(cat /root/xxx-admin.token)" https://127.0.0.1:10250/debug/pprof/goroutine?debug=2 -k
-   
-   # curl --cacert /etc/daocloud/xxx/cert/apiserver.crt -H "Authorization: Bearer $(cat /root/xxx-admin.token)" https://127.0.0.1:10250/debug/pprof/profile -k
-   # curl --cacert /etc/daocloud/xxx/cert/apiserver.crt -H "Authorization: Bearer $(cat /root/xxx-admin.token)" https://127.0.0.1:10250/debug/pprof/heap -k 
    ```
 
 3. 通过 prometheus 监控查看 kubelet 性能数据
 
    ```shell
-   - pleg 中relist 函数负责遍历节点容器来更新 pod 状态(relist	周期 1s，relist 完成时间 + 1s = kubelet_pleg_relist_interval_microseconds)
+   - pleg 中 relist 函数负责遍历节点容器来更新 pod 状态(relist	周期 1s，relist 完成时间 + 1s = kubelet_pleg_relist_interval_microseconds)
    kubelet_pleg_relist_interval_microseconds
    kubelet_pleg_relist_interval_microseconds_count
    kubelet_pleg_relist_latency_microseconds
@@ -243,12 +291,10 @@
    iotop -n 2 > iotop.log
    top -n 1 >> top.log
    df -h > df.log
-   kill -SIGUSR1 $(pidof dockerd) # dump 堆栈信息到 /var/run/docker/
    timeout 5 docker ps -a > docker.ps.log
    timeout 5 docker stats --no-stream > docker.ps.log
    free -lm > free.log
    service kubelet status > kubelet.status
    service docker status > docker.status
    ```
-
    
