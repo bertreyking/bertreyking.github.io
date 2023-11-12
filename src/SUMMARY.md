@@ -65,6 +65,8 @@
     - [上下文切换](linux/cpu_上下文切换.md)
     - [负载分析](linux/cpu_Load_Average分析.md)
 
+  - [网卡配置]()
+    - [bonding](linux/bindind.md)
   - [DNS](linux/dns.md)
   - [命令手册]()
     - [Echo 自定义输出](linux/echo定制脚本输出颜色.md)
