@@ -2,15 +2,15 @@
 
 ## bond 模式
 
-| Mode                      | Switch配置                                      |
-| ------------------------- | ----------------------------------------------- |
-| **0** - **balance-rr**    | 需要启用静态的 Etherchannel（未启用 LACP 协商） |
-| **1** - **active-backup** | 需要可自主端口                                  |
-| **2** - **balance-xor**   | 需要启用静态的 Etherchannel（未启用 LACP 协商） |
-| **3** - **broadcast**     | 需要启用静态的 Etherchannel（未启用 LACP 协商） |
-| **4** - **802.3ad**       | 需要启用 LACP 协商的 Etherchannel               |
-| **5** - **balance-tlb**   | 需要可自主端口                                  |
-| **6** - **balance-alb**   | 需要可自主端口                                  |
+| Mode                      | Switch配置                                                   |
+| :------------------------ | ------------------------------------------------------------ |
+| **0** - **balance-rr**    | 需要启用静态的 Etherchannel（未启用 LACP 协商）              |
+| **1** - **active-backup** | 需要可自主端口                                               |
+| **2** - **balance-xor**   | 需要启用静态的 Etherchannel（未启用 LACP 协商） # 需要交换机配置 |
+| **3** - **broadcast**     | 需要启用静态的 Etherchannel（未启用 LACP 协商）              |
+| **4** - **802.3ad**       | 需要启用 LACP 协商的 Etherchannel  # 需要交换机配置          |
+| **5** - **balance-tlb**   | 需要可自主端口                                               |
+| **6** - **balance-alb**   | 需要可自主端口                                               |
 
 ## 配置
 
@@ -18,7 +18,7 @@
 
 ```shell
 # 判断网卡是否支持 mii、以及网卡是否连线
-ethtool interface_name | grep "Link detected:"
+ethtool p5p1 | grep "Link detected:"
 Link detected: yes
 ```
 
@@ -32,7 +32,7 @@ Link detected: yes
 
 ```shell
 # nmcli con add type bond ifname bond0 bond.options "mode=802.3ad,miimon=100,lacp_rate=1”  # 802.3ad or 4、lacp_rate=fast/1
-Connection 'bond-mybond0' (5f739690-47e8-444b-9620-1895316a28ba) successfully added.
+Connection 'bond0' (5f739690-47e8-444b-9620-1895316a28ba) successfully added.
 
 # nmcli con add type ethernet ifname ens3 master bond0
 Connection 'bond-slave-ens3' (220f99c6-ee0a-42a1-820e-454cbabc2618) successfully added.
@@ -44,6 +44,7 @@ Connection 'bond-slave-ens7' (ecc24c75-1c89-401f-90c8-9706531e0231) successfully
 ### 脚本配置 bonding
 
 ```shell
+# 脚本文件 create_bonding.sh
 #!/bin/bash
 
 echo '配置 bond'
@@ -72,6 +73,10 @@ echo ' '
 echo '禁用 selinx、firewalld'
 systemctl stop firewalld && systemctl disable firewalld
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+
+# 执行
+# chmod +x create_bonding.sh
+# ./create_bonding.sh p4p1 p5p1 10.29.19.110 10.29.19.254
 ```
 
 ### lcap_rate 含义
@@ -111,4 +116,4 @@ DEFROUTE=no
 
 ## 参考文档
 
-[7.3. 使用 NetworkManager 命令行工具 nmcli 进行网络绑定][https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/7/html/networking_guide/sec-network_bonding_using_the_networkmanager_command_line_tool_nmcli]
+[7.3. 使用 NetworkManager 命令行工具 nmcli 进行网络绑定](https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/7/html/networking_guide/sec-network_bonding_using_the_networkmanager_command_line_tool_nmcli)
