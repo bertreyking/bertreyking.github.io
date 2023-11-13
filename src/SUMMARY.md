@@ -68,7 +68,7 @@
   - [网卡配置]()
     - [bonding](linux/bonding.md)
   - [Chrony 时钟同步]()
-    - [chrony][linux/chronyd_sync.md]
+    - [chrony](linux/chronyd_sync.md)
   - [DNS](linux/dns.md)
   - [命令手册]()
     - [Echo 自定义输出](linux/echo定制脚本输出颜色.md)
