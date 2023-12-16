@@ -203,7 +203,7 @@
    [root@k8s-master yum.repos.d]# yum install --setopt=obsoletes=0 kubeadm-1.17.4-0 kubelet-1.17.4-0 kubectl-1.17.4-0 -y
    
    - 安装 kubeadm、kubectl 组件
-   [root@k8s-master yum.repos.d]# yum install kubelet kubeadm kubectl --disableexcludes=kubernetes
+   [root@k8s-master yum.repos.d]# yum install --setopt=obsoletes=0 kubeadm-1.28.2-0 kubelet-1.28.2-0 kubectl-1.28.2-0 -y
    Loaded plugins: fastestmirror
    Loading mirror speeds from cached hostfile
     * base: mirrors.ustc.edu.cn
@@ -560,8 +560,59 @@
   kube-system        kube-scheduler-k8s-master                 1/1     Running   0             15h
   tigera-operator    tigera-operator-56d54674b6-lbzzf          1/1     Running   1 (30m ago)   36m
   
-  - 安装 calicoctl
-  这里不做展示
+  - 安装 calicoctl as a kubectl plugin on a single host
+  [root@k8s-master01 ~]# curl -L https://github.com/projectcalico/calico/releases/download/v3.26.4/calicoctl-linux-amd64 -o kubectl-calico
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+ 20 62.1M   20 12.8M    0     0  44882      0  0:24:12  0:05:00  0:19:12 41714
+
+  [root@k8s-master01 ~]# chmod +x kubectl-calico
+  [root@k8s-master01 ~]# kubectl calico -h
+  [root@k8s-master01 ~]# mv kubectl-calico /usr/local/bin/
+[root@k8s-master01 ~]# kubectl calico -h
+Usage:
+  kubectl-calico [options] <command> [<args>...]
+
+    create       Create a resource by file, directory or stdin.
+    replace      Replace a resource by file, directory or stdin.
+    apply        Apply a resource by file, directory or stdin.  This creates a resource
+                 if it does not exist, and replaces a resource if it does exists.
+    patch        Patch a pre-exisiting resource in place.
+    delete       Delete a resource identified by file, directory, stdin or resource type and
+                 name.
+    get          Get a resource identified by file, directory, stdin or resource type and
+                 name.
+    label        Add or update labels of resources.
+    convert      Convert config files between different API versions.
+    ipam         IP address management.
+    node         Calico node management.
+    version      Display the version of this binary.
+    datastore    Calico datastore management.
+
+Options:
+  -h --help                    Show this screen.
+  -l --log-level=<level>       Set the log level (one of panic, fatal, error,
+                               warn, info, debug) [default: panic]
+     --context=<context>       The name of the kubeconfig context to use.
+     --allow-version-mismatch  Allow client and cluster versions mismatch.
+
+Description:
+  The calico kubectl plugin is used to manage Calico network and security
+  policy, to view and manage endpoint configuration, and to manage a Calico
+  node instance.
+
+  See 'kubectl-calico <command> --help' to read about a specific subcommand.
+
+- 安装 helm 组件
+[root@k8s-master01 ~]# twget https://get.helm.sh/helm-v3.13.3-linux-amd64.tar.gz
+[root@k8s-master01 ~]# tar -zxvf helm-v3.13.3-linux-amd64.tar.gz 
+linux-amd64/
+linux-amd64/LICENSE
+linux-amd64/README.md
+linux-amd64/helm
+[root@k8s-master01 ~]# mv linux-amd64/helm /usr/local/bin/helmmv linux-amd64/helm /usr/local/bin/helm^C
+[root@k8s-master01 ~]# mv linux-amd64/helm /usr/local/bin/helm
   ```
 
 ## client 工具使用与优化
