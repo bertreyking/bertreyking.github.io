@@ -101,7 +101,7 @@
    bin/containerd
    bin/containerd-stress
    
-   - 配置systemd
+   - 配置systemd # 默认会生成
    vi /usr/lib/systemd/system/containerd.service
    [Unit]
    Description=containerd container runtime
@@ -131,24 +131,20 @@
    
    [Install]
    WantedBy=multi-user.target
-   
-   - 启动
-   systemctl daemon-reload
-   systemctl enable --now containerd
-   
+    
    - 生成默认配置文件
    mkdir -p /etc/containerd/
    containerd config default >> /etc/containerd/config.toml
    
    - cgroup 驱动更改为 systemd
-   vi /etc/containerd/config.toml # 137 行
+   vi /etc/containerd/config.toml
    [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
      ...
      [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
        SystemdCgroup = true
        
    - 修改 containerd 默认的 pause 镜像 # 默认为境外镜像由于网络问题需要更改为国内源
-   vi /etc/containerd/config.toml # 65 行
+   vi /etc/containerd/config.toml
    [plugins."io.containerd.grpc.v1.cri"]
      sandbox_image = "k8s.m.daocloud.io/pause:3.9" # 更改为 k8s.m.daocloud.io，默认为 registry.k8s.io
      
