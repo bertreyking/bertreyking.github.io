@@ -32,7 +32,7 @@ dashboard-metrics-scraper-7bc864c59-lwlnf   1/1     Running   0          76s
 kubernetes-dashboard-6c7ccbcf87-55jln       1/1     Running   0          76s
 ```
 
-## 使用 nodeport 暴露出来
+## 使用 nodeport/ingress 暴露出来
 
 ```shell
 [root@controller-node-1 ~]# kubectl get svc -n kubernetes-dashboard 
@@ -72,6 +72,37 @@ spec:
   type: NodePort
 status:
   loadBalancer: {}
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    annotations: ""
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{},"name":"kubernetes-dashboard-ingress","namespace":"kubernetes-dashboard"},"spec":{"ingressClassName":"nginx","rules":[{"host":"mawb.kubernetes.com","http":{"paths":[{"backend":{"service":{"name":"kubernetes-dashboard","port":{"number":443}}},"path":"/","pathType":"Prefix"}]}}]}}
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  creationTimestamp: "2023-12-16T09:17:13Z"
+  generation: 2
+  name: kubernetes-dashboard-ingress
+  namespace: kubernetes-dashboard
+  resourceVersion: "21457"
+  uid: 78e57486-96d1-4496-a517-f8382bc53cbf
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: mawb.kubernetes.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: kubernetes-dashboard
+            port:
+              number: 443
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer: {}  
 ```
 
 ## 访问
