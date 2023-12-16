@@ -8,6 +8,7 @@
 - [Kubernetes (k8s)]()
   - [安装]()
     - [Kubeadm 安装 k8s1.28.1](kubernetes/k8s-install-doc.md)
+    - [Dashboard](kubernetes/kubernetes-dashabord.md)
   - [资源]()
     - [Cronjob 使用](kubernetes/cronjob.md)
     - [Probe 使用](kubernetes/liveness_readiness_startup.md)
