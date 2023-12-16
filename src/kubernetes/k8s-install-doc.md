@@ -657,3 +657,6 @@ linux-amd64/helm
 
 - 解决
   1. 重启节点后，init 集群成功 # 怀疑时 selinux 配置导致的
+
+- Ingress-nginx
+  - [install](https://kubernetes.github.io/ingress-nginx/deploy/)
