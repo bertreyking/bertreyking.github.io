@@ -18,6 +18,7 @@
   - [优化]()
     - [Kubelet 资源限制](kubernetes/kubeletResourcesmgmt.md)
     - [LimitRange](kubernetes/limitrange.md)
+    - [RBAC-Role 使用篇](kubernetes/gen_rbac.md)
 - [K3s (轻量型 k8s)](k3s/k3s-架构篇.md)
   - [安装](k3s/k3s-安装篇.md)
 
