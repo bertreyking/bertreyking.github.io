@@ -68,7 +68,6 @@
   - [性能分析]()
     - [上下文切换](linux/cpu_上下文切换.md)
     - [负载分析](linux/cpu_Load_Average分析.md)
-
   - [网卡配置]()
     - [bonding](linux/bonding.md)
   - [Chrony 时钟同步]()
@@ -83,6 +82,7 @@
   - [Shell](linux/shell.md)
     - [条件判断](linux/shell_condition.md)
     - [特殊变量](linux/shell_variable.md)
+    - [统计文件数及目录大小](linux/countfile_size.md)
   - [窥探容器]()
     - [自定义容器路由](linux/container_addroutes.md)
     - [通过 Pid 查找 ContainerID](linux/pidstat_vs_ps.md)
