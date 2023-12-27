@@ -631,7 +631,70 @@
    timeout: 10
    ```
 
-3. kubectl 自动补全
+3. nerdctl 安装
+
+   ```shell
+   - nerdctl 工具
+   [root@k8s-master01 ~]# wget https://github.com/containerd/nerdctl/releases/download/v1.7.2/nerdctl-1.7.2-linux-amd64.tar.gz
+   [root@k8s-master01 ~]# tar Cxzvvf /usr/local/bin nerdctl-1.7.2-linux-amd64.tar.gz
+      -rwxr-xr-x root/root  24838144 2023-12-12 19:00 nerdctl
+      -rwxr-xr-x root/root     21618 2023-12-12 18:59 containerd-rootless-setuptool.sh
+      -rwxr-xr-x root/root      7187 2023-12-12 18:59 containerd-rootless.sh
+   
+   - nerdctl 报错
+   [root@k8s-master01 pig-register]# nerdctl build -t 10.10.1.75:5000:/pig/pig-registry:latest . 
+    ERRO[0000] `buildctl` needs to be installed and `buildkitd` needs to be running, see https://github.com/moby/buildkit  error="failed to ping to host unix:///run/buildkit-default/buildkitd.sock: exec: \"buildctl\": executable file not found in $PATH\nfailed to ping to host unix:///run/buildkit/buildkitd.sock: exec: \"buildctl\": executable file not found in $PATH" FATA[0000] no buildkit host is available, tried 2 candidates: failed to ping to host unix:///run/buildkit-default/buildkitd.sock: exec: "buildctl": executable file not found in $PATH failed to ping to host unix:///run/buildkit/buildkitd.sock: exec: "buildctl": executable file not found in $PATH 
+   
+   - 安装 buildkit(支持 runc 和 containerd 及 非 root 运行)
+   [root@k8s-master01 ~]# wget https://github.com/moby/buildkit/releases/download/v0.12.4/buildkit-v0.12.4.linux-amd64.tar.gz
+   [root@k8s-master01 ~]# tar Cxzvvf /usr/local/ buildkit-v0.12.4.linux-amd64.tar.gz
+   [root@k8s-master01 ~]# vi /usr/lib/systemd/system/buildkit.service
+   [Unit]
+   Description=BuildKit
+   Requires=buildkit.socket
+   After=buildkit.socket
+   Documentation=https://github.com/moby/buildkit
+
+   [Service]
+   Type=notify
+   ExecStart=/usr/local/bin/buildkitd --addr fd://
+
+   [Install]
+   WantedBy=multi-user.target
+
+   [root@k8s-master01 ~]# vi /usr/lib/systemd/system/buildkit.socket
+   [Unit]
+   Description=BuildKit
+   Documentation=https://github.com/moby/buildkit
+
+   [Socket]
+   ListenStream=%t/buildkit/buildkitd.sock
+   SocketMode=0660
+
+   [Install]
+   WantedBy=sockets.target
+
+   [root@k8s-master01 ~]# systemctl daemon-reload && systemctl restart buildkitd.service
+
+   - 构建镜像
+   [root@k8s-master01 pig-register]# nerdctl build -t pig-registry:latest -f Dockerfile . 
+    [+] Building 14.9s (4/7)                                                                                                                                      
+    => [internal] load build definition from Dockerfile                                                                                                     0.0s
+    => => transferring dockerfile: 384B                                                                                                                     0.0s
+    => [internal] load metadata for docker.io/alibabadragonwell/dragonwell:17-anolis                                                                        2.8s
+    => [internal] load .dockerignore                                                                                                                        0.0s
+    => => transferring context: 2B                                                                                                                          0.0s
+    => [1/3] FROM docker.io/alibabadragonwell/dragonwell:17-anolis@sha256:2d31fb3915436ed9f15b4cda936d233419a45a8e35c696d324d6ceadab3d30cc                 12.1s
+    => => resolve docker.io/alibabadragonwell/dragonwell:17-anolis@sha256:2d31fb3915436ed9f15b4cda936d233419a45a8e35c696d324d6ceadab3d30cc                  0.0s
+    => => sha256:4f4c4e7d1e14aae42ec5ae94c49838c5be9130315ae3e41d56a8670383c0a727 18.39MB / 18.39MB                                                         4.9s
+    => => sha256:1eb01ecdf1afb7abdb39b396b27330b94d3f6b571d766986e2d91916fedad4d1 126B / 126B                                                               1.0s
+    => => sha256:54273d8675f329a1fbcaa73525f4338987bd8e81ba06b9ba72ed9ca63246c834 58.72MB / 82.82MB                                                        12.0s
+    => => sha256:2c5d3d4cbdcb00ce7c1aec91f65faeec72e3676dcc042131f7ec744c371ada32 26.21MB / 193.44MB                                                       12.0s
+    => [internal] load build context                                                                                                                        1.1s
+    => => transferring context: 160.19MB                                                                                                                    1.1s
+   ```
+
+4. kubectl 自动补全
 
    ```shell
    # 节点需要安装 bash-completion、节点初始化配置已包含
