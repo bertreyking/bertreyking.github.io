@@ -152,5 +152,5 @@ pvc-8ceef78d-bdaa-4503-9012-4844b9ce3739.tar.gz
 
 - [nfs-subdir](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) 
 - [nfs-csi](https://github.com/kubernetes-csi/csi-driver-nfs?tab=readme-ov-file) 
-- - [nfs-csi-snapshotter](https://github.com/kubernetes-csi/external-snapshotter)
+- [nfs-csi-snapshotter](https://github.com/kubernetes-csi/external-snapshotter)
 

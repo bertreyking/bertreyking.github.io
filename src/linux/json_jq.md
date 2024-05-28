@@ -29,6 +29,18 @@ cat /tmp/i_cpu_data.json | jq -r '[.values[][1]]|@json' | jq max -r
 cat /tmp/i_cpu_data.json | awk 'BEGIN {max = 0} {if ($1+0 > max+0) max=$1} END {print max}'
 ```
 
+## 格式化数据，按 csv 格式输出
+```
+bash getadminrole_userlist.sh | jq -r '["User","Type","ID"],(.items[] | [.name,.type,.id]) | @csv'
+"User","Type","ID"
+"admin","user","b5ec0e22-bfbc-414c-83b3-260c0dca21d2"
+
+说明：
+["User","Type","ID"]：定义 title
+(.items[] | [.name,.type,.id])：按 dict/list 对数据检索
+｜ @csv：导出为 csv 格式
+```
+
 
 ## 参考链接
 
