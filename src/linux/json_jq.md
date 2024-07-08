@@ -39,6 +39,16 @@ bash getadminrole_userlist.sh | jq -r '["User","Type","ID"],(.items[] | [.name,.
 ["User","Type","ID"]：定义 title
 (.items[] | [.name,.type,.id])：按 dict/list 对数据检索
 ｜ @csv：导出为 csv 格式
+输出示例如下：
+curl http://10.233.10.18:9090/api/v1/targets?state=active | jq -r '["targets","endpoint","health"],(.data.activeTargets[] | [.scrapePool,.scrapeUrl,.health]) | @tsv'
+targets endpoint        health
+serviceMonitor/ingress-nginx-lb01/ingress-nginx-lb01-controller/0       http://10.233.74.103:10254/metrics      up
+serviceMonitor/insight-system/insight-agent-etcd-exporter/0     http://10.233.74.110:2381/metrics       up
+serviceMonitor/insight-system/insight-agent-fluent-bit/0        http://10.233.74.119:2020/api/v1/metrics/prometheus     up
+serviceMonitor/insight-system/insight-agent-fluent-bit/0        http://10.233.84.205:2020/api/v1/metrics/prometheus     up
+serviceMonitor/insight-system/insight-agent-kube-prometh-apiserver/0    https://10.29.26.199:6443/metrics       up
+serviceMonitor/insight-system/insight-agent-kube-prometh-coredns/0      http://10.233.74.127:9153/metrics       up
+serviceMonitor/insight-system/insight-agent-kube-prometh-coredns/0      http://10.233.84.219:9153/metrics       up
 ```
 
 
