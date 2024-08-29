@@ -46,3 +46,4 @@
 
 - [Mac 中 Git 安装与 GitHub 基本使用](https://www.jianshu.com/p/7edb6b838a2e)
 - [生成新的 SSH-key 并且添加到 ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [将本地托管代码添加到 GitHub](https://docs.github.com/zh/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github?platform=linux)
