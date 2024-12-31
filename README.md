@@ -46,3 +46,4 @@
 
 - [Mac 中 Git 安装与 GitHub 基本使用](https://www.jianshu.com/p/7edb6b838a2e)
 - [生成新的 SSH-key 并且添加到 ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- 每年需要更新下 token，在个人用户 setting 中 dev开发这里面创建 token，并设置某个 repo 的访问权限，然后 git clone 时使用 https，git push 提交时提示输入用户密码/密码就是我们创建的 token
