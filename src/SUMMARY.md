@@ -29,7 +29,7 @@
   - [ClusterPedia 对接 k8s](clusterpedia/ClusterPedia-对接-k8s.md)
 
 - [Prometheus](other/prometheus/prometheus.md)
-  - [安装]()
+  - [vmetrics+prometheus 安装](other/prometheus/victoriametrics_install.md)
   - [配置]()
   - [使用](other/prometheus/prometheus_usege.md)
     - [常用函数](other/prometheus/prometheus-query.md)
