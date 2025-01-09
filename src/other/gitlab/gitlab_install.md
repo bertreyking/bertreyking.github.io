@@ -27,13 +27,14 @@
        --shm-size 256m \
        gitlab/gitlab-ce:14.8.6-ce.0
      ```
-
-
-   - 初始密码
-
-     ```shell
-     docker exec -it $containerID /bin/cat /etc/gitlab/initial_root_password
-     ```
+   
+   
+      - 初始密码
+   
+        ```shell
+        docker exec -it $containerID /bin/cat /etc/gitlab/initial_root_password
+        ```
+   
 
 3. 允许 80、443 访问，并禁止 IP 访问
 
@@ -112,6 +113,19 @@
      Confirm password: 
      Password successfully updated for user with username root.
      - 重启容器即可
+     ```
+   
+   
+   - 禁用 gitlab 中 prometheus 组件(gitlab.rb)
+   
+     ```shell
+     - 编辑 gitlab.rb 配置文件
+     vi gitlab.rb
+     prometheus_monitoring['enable'] = false # 组件资源占用比较大，加一酌情禁用
+     
+     - 重新加载配置/重启也可以
+     gitlab-ctl reconfigure
+     gitlab-ctl restart
      ```
    
      
