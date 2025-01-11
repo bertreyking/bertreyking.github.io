@@ -29,11 +29,11 @@
      ```
    
    
-      - 初始密码
+   - 初始密码
    
-        ```shell
-        docker exec -it $containerID /bin/cat /etc/gitlab/initial_root_password
-        ```
+     ```shell
+     docker exec -it $containerID /bin/cat /etc/gitlab/initial_root_password
+     ```
    
 
 3. 允许 80、443 访问，并禁止 IP 访问
@@ -121,7 +121,7 @@
      ```shell
      - 编辑 gitlab.rb 配置文件
      vi gitlab.rb
-     prometheus_monitoring['enable'] = false # 组件资源占用比较大，加一酌情禁用
+     prometheus_monitoring['enable'] = false # 组件资源占用比较大，
      
      - 重新加载配置/重启也可以
      gitlab-ctl reconfigure
