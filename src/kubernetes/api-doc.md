@@ -36,3 +36,6 @@
     1. op："path": "/spec/template/spec/containers/0/args" 需要定位到 containers 列表中的字典，然后对其 key:value 键值对进行更新
     2. merge：{"spec":{"template":{"spec":{"containers":[{"name":"nginx","image":"nginx:1.16"}]}}}} 需要也是类似，但是需要加上 name么，否则会报错，在我的环境 name 是这个 dict 中的第一个键值对，后续留意下这点
 
+# github
+- [zh-cn-api](https://github.com/kubernetes/website/tree/main/content/zh-cn)
+- [en](https://github.com/kubernetes/website/tree/main/content/en)
