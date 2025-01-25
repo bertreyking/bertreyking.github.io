@@ -282,6 +282,12 @@ scrape_configs:
   - job_name: "ipmi-exporter"
     static_configs:
       - targets: ["192.168.0.110:9290"]
+  - job_name: "alertmanager"
+    static_configs:
+      - targets: ["192.168.0.110:9093"]
+  - job_name: "blackbox-exporter"
+    static_configs:
+      - targets: ["192.168.0.110:9115"]
       
 # 示例告警规则
 [root@vmserver prometheus]# cat /var/lib/prometheus/rules/instance_down_status.yml 
@@ -305,6 +311,9 @@ groups:
     annotations:
       summary: "High request latency on {{ $labels.instance }}"
       description: "{{ $labels.instance }} has a median request latency above 1s (current value: {{ $value }}s)"
+  
+# Prometheus 开启热加载
+curl -X POST http://192.168.0.110:9090/-/reload 
 ```
 
 ## 部署仪表盘

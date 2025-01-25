@@ -15,6 +15,7 @@
     - [ConfigMap 使用](kubernetes/Configmap.md)
   - [故障排查]()
     - [Kubelet PLEG](kubernetes/kubelet-pleg-error.md)
+    - [podman 容器数据软链](kubernetes/odman_containers_data_ln.md)
   - [优化]()
     - [Kubelet 资源限制](kubernetes/kubeletResourcesmgmt.md)
     - [LimitRange](kubernetes/limitrange.md)
