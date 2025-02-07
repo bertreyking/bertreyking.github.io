@@ -49,6 +49,9 @@
 - [Gitlab]()
   - [安装](other/gitlab/gitlab_install.md)
 
+- [Helm]()
+  - [helm 使用](kubernetes/helm_use.md)
+
 - [Harbor]()
   - [安装](other/harbor/harbor-install-doc.md)
 
