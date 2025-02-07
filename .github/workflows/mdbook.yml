@@ -44,12 +44,11 @@ jobs:
       - name: Build with mdBook
         run: |
           mdbook build
-          ls -l ./src
-          tree -l ./src
+          tree -l ./book
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./src
+          path: ./book
 
   # Deployment job
   deploy:
