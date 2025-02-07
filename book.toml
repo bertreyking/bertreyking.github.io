@@ -2,7 +2,7 @@
 authors = ["weibing.ma"]
 language = "cn"
 multilingual = false
-src = "book"
+src = "src"
 
 [output.html] 
 theme = "theme"
