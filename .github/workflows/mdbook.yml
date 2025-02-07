@@ -42,7 +42,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - name: Check book directory
-        run: ls -l ./book
+        run: ls -l ./src
       - name: Build with mdBook
         run: mdbook build
       - name: Upload artifact
