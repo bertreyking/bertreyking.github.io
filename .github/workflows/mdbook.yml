@@ -58,6 +58,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: List uploaded artifacts
+        run: |
+          ls -l ${{ runner.temp }}/_github_home/_temp
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v3
