@@ -58,12 +58,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: Check uploaded artifact
-      run: |
-        ls -l
-        ls -l ${{ github.workspace }}
-        ls -l ${{ github.workspace }}/book
-        tree ${{ github.workspace }}/book || echo "No book directory found"
+      - name: Check uploaded artifact
+        run: |
+          ls -l
+          ls -l ${{ github.workspace }}
+          ls -l ${{ github.workspace }}/book
+          tree ${{ github.workspace }}/book || echo "No book directory found"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
