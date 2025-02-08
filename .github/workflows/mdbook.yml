@@ -46,7 +46,7 @@ jobs:
           mdbook build
           tree -l ./book
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: ./book
 
