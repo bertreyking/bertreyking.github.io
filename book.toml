@@ -14,6 +14,7 @@ copy-fonts = true
 additional-css = ["theme/css/variables.css"] 
 no-section-label = false
 git-repository-url = "https://github.com/bertreyking/bertreyking.github.io" 
+git-repository-icon: "fa-code-fork"
 
 [output.html.fold]
 enable = true
