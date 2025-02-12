@@ -40,7 +40,7 @@
   - [故障排查](other/prometheus/troubleshooting.md)
     - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
 
-- [Elastic](/other/elastic/elastic.md)
+- [Elastic](other/elastic/elastic.md)
 
 - [Skywalking](other/skywalking/what_is_skywalking.md)
   - [安装](other/skywalking/skywalking_install.md)
