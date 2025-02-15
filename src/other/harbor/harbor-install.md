@@ -182,7 +182,6 @@ ghcr.io/zalando/postgres-operator-ui:v1.13.0 # ghcr.io 替换为 ghcr.m.daocloud
 
 ### 通过 postgres-ui 安装 pg-cluster
 
-- ![new-pg-cluster](/png/new-pg-cluster.png)
 - ![new-pg-cluster-conf01](/png/new-pg-cluster-conf01.png)
 - ![new-pg-cluster-conf02](/png/new-pg-cluster-conf02.png)
 
