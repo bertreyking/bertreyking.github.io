@@ -39,6 +39,9 @@
     - [Grafana 模版变量](other/prometheus/grafana.md)
   - [故障排查](other/prometheus/troubleshooting.md)
     - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
+  - [AI 生成]()
+    - [deepseek-r1](other/prometheus/deepseek-metrics-data-storage.md)
+    - [chatgpt](other/prometheus/openai-metrics-data-storage.md)
 
 - [Elastic](other/elastic/elastic.md)
 
