@@ -568,7 +568,7 @@
   [root@k8s-master01 ~]# kubectl calico -h
   Usage:
     kubectl-calico [options] <command> [<args>...]
-
+  
       create       Create a resource by file, directory or stdin.
       replace      Replace a resource by file, directory or stdin.
       apply        Apply a resource by file, directory or stdin.  This creates a resource
@@ -584,21 +584,21 @@
       node         Calico node management.
       version      Display the version of this binary.
       datastore    Calico datastore management.
-
+  
   Options:
     -h --help                    Show this screen.
     -l --log-level=<level>       Set the log level (one of panic, fatal, error,
                                 warn, info, debug) [default: panic]
       --context=<context>       The name of the kubeconfig context to use.
       --allow-version-mismatch  Allow client and cluster versions mismatch.
-
+  
   Description:
     The calico kubectl plugin is used to manage Calico network and security
     policy, to view and manage endpoint configuration, and to manage a Calico
     node instance.
-
+  
     See 'kubectl-calico <command> --help' to read about a specific subcommand.
-
+  
   - 安装 helm 组件
   [root@k8s-master01 ~]# twget https://get.helm.sh/helm-v3.13.3-linux-amd64.tar.gz
   [root@k8s-master01 ~]# tar -zxvf helm-v3.13.3-linux-amd64.tar.gz 
@@ -708,7 +708,6 @@
 
   ![k8s-install-error](../png/k8s-install-error.jpg)
   
-
 - 现象
   1. 🈚️任何 pod 创建，kubelet、containerd 没有任何日志且服务运行正常
   2. 以为是超时导致，更改了 init 时使用的集群配置文件  `timeoutForControlPlane: 10m0s` 无效

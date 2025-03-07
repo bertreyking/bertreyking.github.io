@@ -60,6 +60,7 @@
 - [Harbor]()
   - [docker 安装](other/harbor/harbor-install-doc.md)
   - [k8s 安装](other/harbor/harbor-install.md)
+  - [docker 融合镜像](other/harbor/docker-multi-arch.md)
 - [Image-syncer 使用](other/imagesyncer/image-syncer.md)
 ---
 
