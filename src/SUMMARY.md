@@ -20,6 +20,7 @@
     - [Kubelet 资源限制](kubernetes/kubeletResourcesmgmt.md)
     - [LimitRange](kubernetes/limitrange.md)
     - [RBAC-Role 使用篇](kubernetes/gen_rbac.md)
+    - [RBAC & Kubeconfig 汇总篇](kubernetes/rbac_kubeconfig_used.md)
   - [存储]()
     - [nfs](kubernetes/nfs-csi.md)
   - [API](kubernetes/api-doc.md)
