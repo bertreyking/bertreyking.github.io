@@ -54,6 +54,7 @@
 
 - [Gitlab]()
   - [安装](other/gitlab/gitlab_install.md)
+  - [Git 克隆 master 分支后将修改推送 dev 分支](other/gitlab/gitmaster-todev.md)
 
 - [Helm]()
   - [helm 使用](kubernetes/helm_use.md)
