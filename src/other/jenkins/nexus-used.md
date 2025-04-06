@@ -44,3 +44,12 @@
 
 5. 查看文件
    - http://10.29.14.190:8081/nexus/content/sites/javarepo/ 浏览器访问，可以看到文件
+
+# nexus 使用场景
+
+- 可以配置各种源的代理
+  - maven 源
+  - python pip 源
+  - linux 不通发行版的 sources
+  - docker registry
+  - site 站点

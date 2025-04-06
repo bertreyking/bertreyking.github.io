@@ -72,7 +72,7 @@
 
 - [Jenkins 学习]()
   - [通过 Github 自动构建镜像(CI)](other/jenkins/autobuildimg.md)
-
+  - [Nexus](other/jenkins/nexus-used.md)
 # [自动化运维工具]()
 
 - [Ansible]()

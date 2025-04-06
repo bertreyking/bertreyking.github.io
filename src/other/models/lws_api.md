@@ -145,17 +145,21 @@ spec:
 
 ## 更多示例配置
 
-- https://lws.sigs.k8s.io/docs/examples/
+- <https://lws.sigs.k8s.io/docs/examples/>
 
-  - https://github.com/kubernetes-sigs/lws/blob/main/docs/examples/vllm/GPU/lws.yaml
+  - vllm: <https://github.com/kubernetes-sigs/lws/blob/main/docs/examples/vllm/GPU/lws.yaml>
 
-  - https://github.com/kubernetes-sigs/lws/blob/main/docs/examples/sglang/lws.yaml
-    - https://hub.docker.com/r/lmsysorg/sglang/tags
+  - sglang: <https://github.com/kubernetes-sigs/lws/blob/main/docs/examples/sglang/lws.yaml>
+    - image: <https://hub.docker.com/r/lmsysorg/sglang/tags>
 
-- https://cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-gpu?hl=zh-cn
-- https://docs.vllm.ai/en/latest/serving/distributed_serving.html#running-vllm-on-multiple-nodes
-- https://docs.sglang.ai/references/multi_node.html
+- multiple-nodes
+
+  - <https://cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-gpu?hl=zh-cn>
+
+  - <https://docs.vllm.ai/en/latest/serving/distributed_serving.html#running-vllm-on-multiple-nodes>
+
+  - <https://docs.sglang.ai/references/multi_node.html>
 
 ## LWS 设计文档
 
-- https://docs.google.com/document/d/1C0wgkOdDov8fEsBNZF3wPwYv1njRuWBs2-BueymXyfM/edit?tab=t.0
+- <https://docs.google.com/document/d/1C0wgkOdDov8fEsBNZF3wPwYv1njRuWBs2-BueymXyfM/edit?tab=t.0>
