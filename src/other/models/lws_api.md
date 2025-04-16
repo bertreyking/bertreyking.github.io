@@ -9,11 +9,7 @@
 - 旨在解决 AI/ML 推理工作负载的常见部署模式，尤其是多机多卡的推理工作负载，其中 LLM 将被分片并在多个节点上的多个设备上运行
 
   ![lws-img](https://github.com/kubernetes-sigs/lws/blob/main/site/static/images/concept.png?raw=true)
-
-## 功能
-
-- 
-
+ 
 ##  场景
 
 - 用于大模型的服务推理
