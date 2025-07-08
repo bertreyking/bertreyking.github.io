@@ -220,7 +220,8 @@
    - 定义 KUBECONFIG 变量，该变量值是 config 文件的路径列表，这里过滤掉了 config.swp 文件
 
    ```shell
-   export KUBECONFIG=$HOME/.kube/config:$(find $HOME/.kube -type f -maxdepth 1 | grep config | grep -v '\.config\.swp' | tr '\n' ':')
+   # export KUBECONFIG=$HOME/.kube/config:$(find $HOME/.kube -type f -maxdepth 1 | grep config | grep -v '\.config\.swp' | tr '\n' ':')
+   export KUBECONFIG=$HOME/.kube/config:$(find $HOME/.kube -maxdepth 1 -type f | grep config | grep -v '\.config\.swp' | tr '\n' ':')
    kubectl config view --flatten > .kube/config
    
    echo $KUBECONFIG
