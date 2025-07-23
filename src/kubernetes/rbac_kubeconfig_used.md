@@ -217,13 +217,13 @@
 
 2. 合并
 
-   - 定义 KUBECONFIG 变量，该变量值是 config 文件的路径列表，这里过滤掉了 config.swp 文件
+   - 定义 KUBECONFIG 变量，这里过滤掉了 config.swp 文件
 
    ```shell
-   # export KUBECONFIG=$HOME/.kube/config:$(find $HOME/.kube -type f -maxdepth 1 | grep config | grep -v '\.config\.swp' | tr '\n' ':')
+   # 定义 KUBECONFIG 变量
    export KUBECONFIG=$HOME/.kube/config:$(find $HOME/.kube -maxdepth 1 -type f | grep config | grep -v '\.config\.swp' | tr '\n' ':')
-   kubectl config view --flatten > .kube/config
    
+   # 查看 KUBECONFIG 变量值
    echo $KUBECONFIG
    /Users/kingskye/.kube/config:/Users/kingskye/.kube/255-config:/Users/kingskye/.kube/196-config:
    ```
@@ -231,7 +231,7 @@
    - 合并
 
    ```shell
-   
+   kubectl config view --flatten > .kube/config-new
    ```
 
    - 结果
