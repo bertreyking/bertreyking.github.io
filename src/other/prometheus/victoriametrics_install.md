@@ -421,8 +421,36 @@ END
 # 启动
 systemctl daemon-reload && systemctl enable --now alertmanager
 
-# alertmanager 配置文件
-默认的
+# alertmanager 配置文件 - 多 receivers 示例配置
+global:
+  resolve_timeout: 5m
+  smtp_from: "skyking116@163.com"
+  smtp_smarthost: "smtp.163.com:25"
+  smtp_auth_username: "skyking116@163.com"
+  smtp_auth_password: "*********" # 邮箱的授权码
+  smtp_require_tls: false
+  smtp_hello: '163.com'
+templates:
+  - "/etc/vm/configs/**/*.tmpl"
+route:
+  group_by:
+    - "alertname"
+    - "group_id"   
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 1h
+  receiver: insight
+  routes:
+  - receiver: 163mail 
+    continue: true # 继续匹配下一个路由，也就是告警都会发送到所有的 receiver
+receivers:
+- name: insight
+  webhook_configs:
+  - url: http://insight-server.insight-system.svc.cluster.local:80/apis/insight.io/v1alpha1/alert/hook
+- name: 163mail
+  email_configs:
+  - to: weibing.ma@daocloud.io
+    send_resolved: true
 ```
 
 ### 对接企业微信
