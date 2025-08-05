@@ -42,6 +42,7 @@
     - [常用函数](other/prometheus/prometheus-query.md)
     - [标签自定义配置](other/prometheus/relabel_configs.md)
     - [Grafana 模版变量](other/prometheus/grafana.md)
+    - [Grafana 自定义配置](other/prometheus/grafana_subpath.md)
   - [故障排查](other/prometheus/troubleshooting.md)
     - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
   - [AI 生成]()
@@ -58,6 +59,8 @@
 
 - [Gitlab]()
   - [安装](other/gitlab/gitlab_install.md)
+    - [operator_install_gitlab](other/gitlab/operator_install_gitlab.md)
+    - [gitlab_subpath](other/gitlab/gitlab_subpath.md)
   - [Git 克隆 master 分支后将修改推送 dev 分支](other/gitlab/gitmaster-todev.md)
 
 - [Helm]()
