@@ -21,7 +21,6 @@ else
     echo "You have provided $# command line argument(s)."
 fi
 
-https://feed.iggv5.com/c/1048b25c-28fa-4da9-afbb-4edba7770f21/platform/clash/iGG-iGuge
 ```
 
 该脚本检查是否提供了命令行参数。如果没有，则输出用法信息；否则，它将输出参数数量的消息。注意，在上述脚本中，$0 变量用于获取脚本名称本身。
