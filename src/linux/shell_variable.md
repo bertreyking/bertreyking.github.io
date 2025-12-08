@@ -21,6 +21,7 @@ else
     echo "You have provided $# command line argument(s)."
 fi
 
+# test
 ```
 
 该脚本检查是否提供了命令行参数。如果没有，则输出用法信息；否则，它将输出参数数量的消息。注意，在上述脚本中，$0 变量用于获取脚本名称本身。
