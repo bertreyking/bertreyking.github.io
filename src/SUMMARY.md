@@ -37,6 +37,7 @@
 
 - [Prometheus](other/prometheus/prometheus.md)
   - [vmetrics+prometheus 安装](other/prometheus/victoriametrics_install.md)
+  - [vmsingle-operator](other/prometheus/vmsingle.md)
   - [配置]()
   - [使用](other/prometheus/prometheus_usege.md)
     - [常用函数](other/prometheus/prometheus-query.md)
