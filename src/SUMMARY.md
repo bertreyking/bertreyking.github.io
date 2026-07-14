@@ -44,6 +44,7 @@
     - [标签自定义配置](other/prometheus/relabel_configs.md)
     - [Grafana 模版变量](other/prometheus/grafana.md)
     - [Grafana 自定义配置](other/prometheus/grafana_subpath.md)
+    - [Grafana_重名字段匹配](other/prometheus/grafana-pod-same.md)
   - [故障排查](other/prometheus/troubleshooting.md)
     - [kubelet Job 丢失](other/prometheus/kubelet-job-missing.md)
   - [AI 生成]()
