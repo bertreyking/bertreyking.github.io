@@ -57,6 +57,8 @@
 
 - [Skywalking](other/skywalking/what_is_skywalking.md)
   - [安装](other/skywalking/skywalking_install.md)
+  - [使用]()
+    - [删除index导致无法查看服务实例](other/skywalking/SkyWalking_Metrics_delete-index-error-report.md)
 
 - [NeuVector](other/neuvector/what_is_neuvector.md)
   - [安装](other/neuvector/neuvector_install.md)
