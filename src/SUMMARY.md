@@ -77,6 +77,11 @@
   - [k8s 安装](other/harbor/harbor-install.md)
   - [docker 融合镜像](other/harbor/docker-multi-arch.md)
 - [Image-syncer 使用](other/imagesyncer/image-syncer.md)
+- [Middleware]()
+  - [RabbitMQ]()
+    - [RabbitMq无发路由消息排查](other/middleware/rabbitmq_unroutable_drop.md)
+  - [Kafka]()
+    - [Kafka未同步分区排查](other/middleware/kafka_underreplicatedpartitions.md)
 ---
 
 # [CICD]()
