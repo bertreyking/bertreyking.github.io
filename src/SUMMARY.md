@@ -77,7 +77,7 @@
   - [Kafka]()
     - [Kafka未同步分区排查](other/middleware/kafka_underreplicatedpartitions.md)
   - [Redis]()
-    - [Redis 部署方案](other/metallb_rediscluster_calico_rp_filter_故障分析报告_v2.md)
+    - [Redis 部署方案](other/middleware/metallb_rediscluster_calico_rp_filter_故障分析报告_v2.md)
 ---
 
 # [CICD]()
