@@ -31,11 +31,9 @@
   - [Gateway](other/k8sgateway/Traefik-F5TLS-uninstall-htttp-reconfigure.md)
 - [K3s (轻量型 k8s)](k3s/k3s-架构篇.md)
   - [安装](k3s/k3s-安装篇.md)
-
 - [ClusterPedia](clusterpedia/ClusterPedia-概念介绍.md)
   - [ClusterPedia 安装步骤](clusterpedia/ClusterPedia-安装步骤-v0.6.3.md)
   - [ClusterPedia 对接 k8s](clusterpedia/ClusterPedia-对接-k8s.md)
-
 - [Prometheus](other/prometheus/prometheus.md)
   - [vmetrics+prometheus 安装](other/prometheus/victoriametrics_install.md)
   - [vmsingle-operator](other/prometheus/vmsingle.md)
@@ -52,26 +50,22 @@
   - [AI 生成]()
     - [deepseek-r1](other/prometheus/deepseek-metrics-data-storage.md)
     - [chatgpt](other/prometheus/openai-metrics-data-storage.md)
-
+- [Zabbix]()
+  - [面板ITEM匹配异常](other/zabbix/zabbix-4-Dashboard-Graph面板-接口Item匹配异常.md)
 - [Elastic](other/elastic/elastic.md)
-
 - [Skywalking](other/skywalking/what_is_skywalking.md)
   - [安装](other/skywalking/skywalking_install.md)
   - [使用]()
     - [删除index导致无法查看服务实例](other/skywalking/SkyWalking_Metrics_delete-index-error-report.md)
-
 - [NeuVector](other/neuvector/what_is_neuvector.md)
   - [安装](other/neuvector/neuvector_install.md)
-
 - [Gitlab]()
   - [安装](other/gitlab/gitlab_install.md)
     - [operator_install_gitlab](other/gitlab/operator_install_gitlab.md)
     - [gitlab_subpath](other/gitlab/gitlab_subpath.md)
   - [Git 克隆 master 分支后将修改推送 dev 分支](other/gitlab/gitmaster-todev.md)
-
 - [Helm]()
   - [helm 使用](kubernetes/helm_use.md)
-
 - [Harbor]()
   - [docker 安装](other/harbor/harbor-install-doc.md)
   - [k8s 安装](other/harbor/harbor-install.md)
@@ -82,6 +76,8 @@
     - [RabbitMq无发路由消息排查](other/middleware/rabbitmq_unroutable_drop.md)
   - [Kafka]()
     - [Kafka未同步分区排查](other/middleware/kafka_underreplicatedpartitions.md)
+  - [Redis]()
+    - [Redis 部署方案] (other/metallb_rediscluster_calico_rp_filter_故障分析报告_v2.md)
 ---
 
 # [CICD]()
