@@ -232,7 +232,7 @@ tcpdump 可以看到 SYN
 
 ## 5. rp_filter 示意图
 
-![rp_filter 请求丢包原理图](../png/rp_filter.png)
+![rp_filter 请求丢包原理图](/png/rp_filter.png)
 
 一句话理解：
 
